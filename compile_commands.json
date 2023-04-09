@@ -1,0 +1,217 @@
+[
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/CDC.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/CDC.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/CDC.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/HardwareSerial.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/HardwareSerial0.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial0.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial0.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/HardwareSerial1.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial1.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial1.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/HardwareSerial2.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial2.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial2.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/HardwareSerial3.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial3.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/HardwareSerial3.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/IPAddress.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/IPAddress.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/IPAddress.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/PluggableUSB.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/PluggableUSB.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/PluggableUSB.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/Print.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/Print.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/Print.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/Stream.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/Stream.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/Stream.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/Tone.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/Tone.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/Tone.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/USBCore.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/USBCore.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/USBCore.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/release/FrameworkArduino/WInterrupts.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/WInterrupts.c",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/WInterrupts.c"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/WMath.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/WMath.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/WMath.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/WString.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/WString.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/WString.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/abi.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/abi.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/abi.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/release/FrameworkArduino/hooks.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/hooks.c",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/hooks.c"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/main.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/main.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/main.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/FrameworkArduino/new.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/new.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/new.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/release/FrameworkArduino/wiring.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring.c",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring.c"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/release/FrameworkArduino/wiring_analog.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_analog.c",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_analog.c"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/release/FrameworkArduino/wiring_digital.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_digital.c",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_digital.c"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-as -mmcu=atmega2560 -o .pio/build/release/FrameworkArduino/wiring_pulse.S.o /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_pulse.S",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_pulse.S"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/release/FrameworkArduino/wiring_pulse.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_pulse.c",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_pulse.c"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/release/FrameworkArduino/wiring_shift.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega /Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_shift.c",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino/wiring_shift.c"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib4ae/Servo/avr/Servo.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega .pio/libdeps/release/Servo/src/avr/Servo.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/.pio/libdeps/release/Servo/src/avr/Servo.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib4ae/Servo/mbed/Servo.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega .pio/libdeps/release/Servo/src/mbed/Servo.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/.pio/libdeps/release/Servo/src/mbed/Servo.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib4ae/Servo/megaavr/Servo.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega .pio/libdeps/release/Servo/src/megaavr/Servo.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/.pio/libdeps/release/Servo/src/megaavr/Servo.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib4ae/Servo/nrf52/Servo.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega .pio/libdeps/release/Servo/src/nrf52/Servo.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/.pio/libdeps/release/Servo/src/nrf52/Servo.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib4ae/Servo/sam/Servo.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega .pio/libdeps/release/Servo/src/sam/Servo.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/.pio/libdeps/release/Servo/src/sam/Servo.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib4ae/Servo/samd/Servo.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega .pio/libdeps/release/Servo/src/samd/Servo.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/.pio/libdeps/release/Servo/src/samd/Servo.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib4ae/Servo/stm32f4/Servo.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega .pio/libdeps/release/Servo/src/stm32f4/Servo.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/.pio/libdeps/release/Servo/src/stm32f4/Servo.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib17c/Encoder/Encoder.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/release/Encoder -I.pio/libdeps/release/Encoder/utility -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega .pio/libdeps/release/Encoder/Encoder.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/.pio/libdeps/release/Encoder/Encoder.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib4ea/CrcDependency_Adafruit_NeoPixel-master/Adafruit_NeoPixel.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/CrcDependency_Adafruit_NeoPixel-master -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega lib/CrcDependency_Adafruit_NeoPixel-master/Adafruit_NeoPixel.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/lib/CrcDependency_Adafruit_NeoPixel-master/Adafruit_NeoPixel.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-gcc -o .pio/build/release/lib4ea/CrcDependency_Adafruit_NeoPixel-master/esp8266.c.o -c -std=gnu11 -fno-fat-lto-objects -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/CrcDependency_Adafruit_NeoPixel-master -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega lib/CrcDependency_Adafruit_NeoPixel-master/esp8266.c",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/lib/CrcDependency_Adafruit_NeoPixel-master/esp8266.c"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib398/CrcDependency_xbee-arduino-master/Printers.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/CrcDependency_xbee-arduino-master -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega lib/CrcDependency_xbee-arduino-master/Printers.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/lib/CrcDependency_xbee-arduino-master/Printers.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib398/CrcDependency_xbee-arduino-master/XBee.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/CrcDependency_xbee-arduino-master -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega lib/CrcDependency_xbee-arduino-master/XBee.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/lib/CrcDependency_xbee-arduino-master/XBee.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib48e/CrcLib/CrcBuzz.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/CrcLib -Ilib/CrcDependency_xbee-arduino-master -Ilib/CrcDependency_Adafruit_NeoPixel-master -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega lib/CrcLib/CrcBuzz.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/lib/CrcLib/CrcBuzz.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib48e/CrcLib/CrcLib.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/CrcLib -Ilib/CrcDependency_xbee-arduino-master -Ilib/CrcDependency_Adafruit_NeoPixel-master -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega lib/CrcLib/CrcLib.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/lib/CrcLib/CrcLib.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib48e/CrcLib/CrcNeo.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/CrcLib -Ilib/CrcDependency_xbee-arduino-master -Ilib/CrcDependency_Adafruit_NeoPixel-master -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega lib/CrcLib/CrcNeo.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/lib/CrcLib/CrcNeo.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib48e/CrcLib/CrcRemoteState.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/CrcLib -Ilib/CrcDependency_xbee-arduino-master -Ilib/CrcDependency_Adafruit_NeoPixel-master -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega lib/CrcLib/CrcRemoteState.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/lib/CrcLib/CrcRemoteState.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/lib48e/CrcLib/CrcXbee.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Ilib/CrcLib -Ilib/CrcDependency_xbee-arduino-master -Ilib/CrcDependency_Adafruit_NeoPixel-master -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega lib/CrcLib/CrcXbee.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/lib/CrcLib/CrcXbee.cpp"
+    },
+    {
+        "command": "/Users/kennethlew001/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/release/src/main.cpp.o -c -std=gnu++17 -fno-exceptions -fno-threadsafe-statics -fpermissive -mmcu=atmega2560 -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60106 -DARDUINO_AVR_MEGA2560 -DBAUD=9600 -DVERSION=0.0.1 -DETL_NO_STL -DRELEASE -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Isrc -Ilib/CrcLib -Ilib/CrcDependency_xbee-arduino-master -Ilib/CrcDependency_Adafruit_NeoPixel-master -I.pio/libdeps/release/Encoder -I.pio/libdeps/release/Encoder/utility \"-I.pio/libdeps/release/Embedded Template Library/include\" \"-I.pio/libdeps/release/Embedded Template Library\" -I.pio/libdeps/release/Servo/src -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/cores/arduino -I/Users/kennethlew001/.platformio/packages/framework-arduino-avr/variants/mega src/main.cpp",
+        "directory": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024",
+        "file": "/Users/kennethlew001/robotics/Kryptik 2024/LCC-Robotics-Kryptik-2024/src/main.cpp"
+    }
+]
