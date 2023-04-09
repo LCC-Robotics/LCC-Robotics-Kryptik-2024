@@ -1,0 +1,6 @@
+Language: Cpp
+Standard: Auto
+BasedOnStyle: WebKit
+
+UseTab: Never
+AllowShortCaseLabelsOnASingleLine: true
