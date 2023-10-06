@@ -2,7 +2,9 @@
 #include <CrcLib.h> // https://robocrc.atlassian.net/wiki/spaces/AR/pages/403767325/CrcLib+Functions+-+An+overview
 #include <Encoder.h>
 
-using namespace Crc;
+using Crc::CrcLib;
+using CrcUtility::ANALOG;
+using CrcUtility::BUTTON;
 
 // ========================
 // ANALOG INPUTS
