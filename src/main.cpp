@@ -5,9 +5,6 @@
 // CrcLib Reference:
 // https://robocrc.atlassian.net/wiki/spaces/AR/pages/403767325/CrcLib+Functions+-+An+overview
 
-using CrcUtility::ANALOG;
-using CrcUtility::BUTTON;
-
 // ========================
 // PINS:
 
