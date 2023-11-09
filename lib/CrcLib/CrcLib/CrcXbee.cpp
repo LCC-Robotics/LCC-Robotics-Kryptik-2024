@@ -115,7 +115,7 @@ RemoteState CrcXbee::State() { return _state; }
 
 void CrcXbee::ResetState()
 {
-    _state     = { };
+    _state = {};
     // Init to midpoint
     _state.joystick1X = 128;
     _state.joystick1Y = 128;

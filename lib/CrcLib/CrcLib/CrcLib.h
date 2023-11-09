@@ -9,15 +9,11 @@
 #include "CrcBuzz.h"
 #include "CrcNeo.h"
 
-namespace Crc {
 //---------- Reexport -------------------------
 using CrcUtility::ANALOG;
 using CrcUtility::BUTTON;
 
 //---------- Constants or Defaults ------------
-static const int DEFAULT_DEBOUNCE = 5;
-static const int DEFAULT_DEADBAND = 4;
-
 // The number of program scans between CRC_LED_ST state changes.
 // A >20ms scan time flashes every second or more, indicating a potential
 // code problem
@@ -101,13 +97,22 @@ static const unsigned int SCAN_COUNT_HB = 100;
 
 class CrcLib {
 public:
+    class Timer {
+    public:
+        void Start(uint32_t delay);
+        bool IsFinished();
+        void Next();
+
+    private:
+        uint32_t _started;
+        uint32_t _delay = 0;
+    };
+
     /** Default constructor. */
     CrcLib();
 
     static void Initialize();
-    static void Initialize(int debounce, int deadband);
     static void Initialize(bool buzzer);
-    static void Initialize(bool buzzer, int debounce, int deadband);
 
     /** Takes care of any calls or calculations that have to be done
      * continuously (every loop). If any features requiring a continuous update
@@ -123,7 +128,7 @@ public:
     static unsigned int GetDeltaTimeMillis();
 
     // Get the state of the controller (CRConnect)
-    static CrcUtility::RemoteState RemoteState();
+    static void PrintControllerState();
 
     // Returns the time in micros since the last update.
     static unsigned int GetDeltaTimeMicros();
@@ -329,9 +334,6 @@ private:
     // Buzz on error?
     static bool _buzzer;
 
-    static int _debounce;
-    static int _deadband;
-
     static ServoInfo _servos[12];
 
     static unsigned char _pwmPins[12];
@@ -360,7 +362,5 @@ private:
 
     static CrcUtility::CrcBuzz _crcBuzz;
 };
-
-}
 #endif /* Black box */
 #endif

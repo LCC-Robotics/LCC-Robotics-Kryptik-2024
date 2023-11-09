@@ -2,13 +2,10 @@
 #if defined(__AVR_ATmega1280__)                                                \
     || defined(__AVR_ATmega2560__) /* Only if on the mega */
 
-namespace Crc {
 unsigned long CrcLib::_lastUpdateTime    = 0;
 unsigned int CrcLib::_deltaTime          = 0;
 unsigned int CrcLib::_hbCountdown        = SCAN_COUNT_HB;
 bool CrcLib::_commsLastConnected         = false;
-int CrcLib::_debounce                    = 0;
-int CrcLib::_deadband                    = 0;
 bool CrcLib::_buzzer                     = true;
 const unsigned char CrcLib::CRC_LED_NEO  = 32;
 const unsigned char CrcLib::CRC_LED_ST   = 34;
@@ -85,7 +82,7 @@ void CrcLib::Update()
     CrcLib::StatusHeartbeat();
 }
 
-CrcUtility::RemoteState CrcLib::RemoteState() { return _crcXbee.State(); }
+void CrcLib::PrintControllerState() { return _crcXbee.State().PrintPayload(); }
 
 unsigned int CrcLib::GetDeltaTimeMillis() { return _deltaTime / 1000; }
 
@@ -178,7 +175,7 @@ void CrcLib::MoveArcade(int8_t forwardChannel,
     unsigned char rightMotor)
 {
     int8_t left  = constrain(forwardChannel - yawChannel, -128,
-        127); // Determines the power of the left wheels
+         127); // Determines the power of the left wheels
     int8_t right = constrain(forwardChannel + yawChannel, -128,
         127); // Determines the power of the right wheels
 
@@ -203,7 +200,7 @@ void CrcLib::MoveArcade(int8_t forwardChannel,
     unsigned char backRightMotor)
 {
     int8_t left  = constrain(forwardChannel - yawChannel, -128,
-        127); // Determines the power of the left wheels
+         127); // Determines the power of the left wheels
     int8_t right = constrain(forwardChannel + yawChannel, -128,
         127); // Determines the power of the right wheels
 
@@ -233,13 +230,13 @@ void CrcLib::MoveHolonomic(int8_t forwardChannel,
     unsigned char backRightMotor)
 {
     int8_t frontLeft  = constrain(forwardChannel - yawChannel - strafeChannel,
-        -128, 127); // Determines the power of the front left wheel
+         -128, 127); // Determines the power of the front left wheel
     int8_t backLeft   = constrain(forwardChannel - yawChannel + strafeChannel,
-        -128, 127); // Determines the power of the front left wheel
+          -128, 127); // Determines the power of the front left wheel
     int8_t frontRight = constrain(forwardChannel + yawChannel + strafeChannel,
         -128, 127); // Determines the power of the front left wheel
     int8_t backRight  = constrain(forwardChannel + yawChannel - strafeChannel,
-        -128, 127); // Determines the power of the right wheels
+         -128, 127); // Determines the power of the right wheels
 
     SetPwmOutput(frontLeftMotor, frontLeft);
     SetPwmOutput(backLeftMotor, backLeft);
@@ -262,32 +259,16 @@ void CrcLib::MoveHolonomic(ANALOG forwardChannel,
 
 void CrcLib::Initialize()
 {
-    Initialize(true, DEFAULT_DEBOUNCE, DEFAULT_DEADBAND);
-}
-
-void CrcLib::Initialize(int debounce, int deadband)
-{
-    Initialize(true, debounce, deadband);
+    Initialize(true);
 }
 
 void CrcLib::Initialize(bool buzzer)
-{
-    Initialize(buzzer, DEFAULT_DEBOUNCE, DEFAULT_DEADBAND);
-}
-
-void CrcLib::Initialize(bool buzzer, int debounce, int deadband)
 {
     // Setup neopixel
     _crcNeo.Initialize();
 
     // Setup buzzer
     _crcBuzz.Initialize(CRC_BUZZER, buzzer);
-
-    // Set debounce and deadband variables accordingly
-    // this function layout isn't meant to be final but more of a jumping of
-    // point
-    _debounce = debounce;
-    _deadband = deadband;
 
     // Enable or disable buzzer
     _buzzer = buzzer;
@@ -585,5 +566,12 @@ void CrcLib::StopAllOutput()
 
 bool CrcLib::IsCommValid() { return _crcXbee.IsCommValid(); }
 
+void CrcLib::Timer::Start(uint32_t delay)
+{
+    _started = millis();
+    _delay   = delay;
 }
+bool CrcLib::Timer::IsFinished() { return ((uint32_t)millis()) - _started > _delay; }
+void CrcLib::Timer::Next() { _started += _delay; }
+
 #endif /* Black box */

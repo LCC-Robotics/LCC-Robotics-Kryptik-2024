@@ -10,6 +10,7 @@
 CrcLib	KEYWORD1
 ANALOG	KEYWORD1
 BUTTON	KEYWORD1
+Timer	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -32,6 +33,10 @@ IsCommValid	KEYWORD2
 MoveTank	KEYWORD2
 MoveArcade	KEYWORD2
 MoveHolonomic	KEYWORD2
+Start	KEYWORD2
+IsFinished	KEYWORD2
+Next	KEYWORD2
+PrintControllerState	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)

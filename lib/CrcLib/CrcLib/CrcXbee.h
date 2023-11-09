@@ -39,9 +39,9 @@ enum class ANALOG {
 
 class CrcXbee {
 public:
-    CrcXbee()                   = default;
-    ~CrcXbee()                  = default;
-    CrcXbee(const CrcXbee& bee) = default;
+    CrcXbee()                              = default;
+    ~CrcXbee()                             = default;
+    CrcXbee(const CrcXbee& bee)            = default;
     CrcXbee& operator=(const CrcXbee& bee) = default;
 
     // Reads the boolean value of a button on the remote

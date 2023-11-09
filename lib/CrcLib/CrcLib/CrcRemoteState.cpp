@@ -107,34 +107,30 @@ void RemoteState::deserialize_update(uint8_t* payload)
     }
 }
 
+static void printPadded(uint8_t val)
+{
+    int8_t transformedVal = val - 128;
+    if (transformedVal >= 0)
+        PRINT(" ");
+    if (transformedVal < 100)
+        PRINT(" ");
+    if (transformedVal < 10)
+        PRINT(" ");
+    PRINT(transformedVal);
+}
+
 void RemoteState::PrintPayload()
 {
-    PRINT("Arrows:");
-    if (arrowUp) {
-        PRINT(" UP");
-    }
-    if (arrowRight) {
-        PRINT(" RIGHT");
-    }
-    if (arrowDown) {
-        PRINT(" DOWN");
-    }
-    if (arrowLeft) {
-        PRINT(" LEFT");
-    }
-    PRINT(", colors:");
-    if (colorUp) {
-        PRINT(" UP");
-    }
-    if (colorRight) {
-        PRINT(" RIGHT");
-    }
-    if (colorDown) {
-        PRINT(" DOWN");
-    }
-    if (colorLeft) {
-        PRINT(" LEFT");
-    }
+    PRINT("Arrows: ");
+    PRINT(arrowUp ? "U" : " ");
+    PRINT(arrowRight ? "R" : " ");
+    PRINT(arrowDown ? "D" : " ");
+    PRINT(arrowLeft ? "L" : " ");
+    PRINT(", colors: ");
+    PRINT(colorUp ? "U" : " ");
+    PRINT(colorRight ? "R" : " ");
+    PRINT(colorDown ? "D" : " ");
+    PRINT(colorLeft ? "L" : " ");
     PRINT(", L1: ");
     PRINT(L1);
     PRINT(", R1: ");
@@ -149,18 +145,18 @@ void RemoteState::PrintPayload()
     PRINT(hatL);
     PRINT(", hatR: ");
     PRINT(hatR);
-    PRINT(", left trigger: ");
-    PRINT(gachetteG);
-    PRINT(", right trigger: ");
-    PRINT(gachetteD);
+    PRINT(", left trig: ");
+    printPadded(gachetteG);
+    PRINT(", right trig: ");
+    printPadded(gachetteD);
     PRINT(", left X: ");
-    PRINT(joystick1X);
+    printPadded(joystick1X);
     PRINT(", left Y: ");
-    PRINT(joystick1Y);
+    printPadded(joystick1Y);
     PRINT(", right X: ");
-    PRINT(joystick2X);
+    printPadded(joystick2X);
     PRINT(", right Y: ");
-    PRINT(joystick2Y);
+    printPadded(joystick2Y);
     PRINT("\n");
 }
 }
