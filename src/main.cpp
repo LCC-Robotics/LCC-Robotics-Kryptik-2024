@@ -32,6 +32,8 @@ constexpr BUTTON DIE_BUTTON = BUTTON::LOGO;
 
 constexpr uint8_t PRECISION_DIVISION_FACTOR = 2;
 
+// ========================
+
 void setup()
 {
     CrcLib::Initialize();

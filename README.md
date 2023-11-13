@@ -11,7 +11,7 @@ with minimal configuration.
 Make sure you have [`git`](https://git-scm.com/) installed on your machine. Then, clone this repository by command line:
 
 ```shell
-git clone https://github.com/LCC-Robotics/LCC-Robotics-CRC-2023.git
+git clone --recurse-submodules https://github.com/LCC-Robotics/LCC-Robotics-CRC-2023.git
 ```
 
 ## Build and Upload
