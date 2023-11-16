@@ -2,7 +2,7 @@
 .cache/
 compile_commands.json
 
-.idea/*
+.idea/
 
 .vscode/*
 !.vscode/tasks.json
