@@ -24,8 +24,8 @@ public:
 
     void Override(T set_val)
     {
-        _set_val = (float)set_val;
-        _output = (float)set_val;
+        _set_val = (double)set_val;
+        _output = (double)set_val;
 
         _last_error = 0.0;
         _error = 0.0;
@@ -36,12 +36,12 @@ public:
     T Update(T set_val)
     {
         if (_set_val != set_val) {
-            _set_val = (float)set_val;
+            _set_val = (double)set_val;
             _timer.Start(_poll_interval);
         }
 
-        float delta = _set_val - _output;
-        if (abs(delta) > CLOSE_ENOUGH && _timer.IsFinished()) {
+        double delta = _set_val - _output;
+        if (fabs(delta) > CLOSE_ENOUGH && _timer.IsFinished()) {
             _error = delta;
             _derror = (_error - _last_error) / _poll_interval;
             _ierror += _error * _poll_interval;
@@ -55,20 +55,20 @@ public:
     }
 
 private:
-    const float _kp;
-    const float _kd;
-    const float _ki;
+    const double _kp;
+    const double _kd;
+    const double _ki;
 
-    float _last_error;
-    float _error;
-    float _derror;
-    float _ierror;
+    double _last_error = 0;
+    double _error = 0;
+    double _derror = 0;
+    double _ierror = 0;
 
     const uint32_t _poll_interval;
     Timer _timer;
 
-    float _set_val = 0;
-    float _output = 0;
+    double _set_val = 0;
+    double _output = 0;
 };
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_PID_H_
