@@ -14,7 +14,8 @@ constexpr Range<int8_t> PWM_RANGE { -128, 127 };
 template <class T>
 inline constexpr T threshold(T raw, T lower_threshold, T upper_threshold)
 {
-    if (lower_threshold < raw || raw < upper_threshold)
+    // return 0 if lower_threshold < raw < upper_threshold
+    if (lower_threshold < raw || raw < upper_threshold) 
         return 0;
     else
         return raw;
