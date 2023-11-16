@@ -24,13 +24,6 @@ constexpr BUTTON PRECISION_CONTROL = BUTTON::L1;
 // CONST:
 constexpr uint8_t PRECISION_DIVISION_FACTOR = 2;
 
-void drivetrain_die()
-{
-    CrcLib::SetPwmOutput(FL_DRIVE_PIN, 0);
-    CrcLib::SetPwmOutput(BL_DRIVE_PIN, 0);
-    CrcLib::SetPwmOutput(BR_DRIVE_PIN, 0);
-    CrcLib::SetPwmOutput(FR_DRIVE_PIN, 0);
-}
 
 void drivetrain_setup()
 {
@@ -40,7 +33,15 @@ void drivetrain_setup()
     CrcLib::InitializePwmOutput(FR_DRIVE_PIN, true);
 }
 
-void drivetrain_loop()
+void drivetrain_die()
+{
+    CrcLib::SetPwmOutput(FL_DRIVE_PIN, 0);
+    CrcLib::SetPwmOutput(BL_DRIVE_PIN, 0);
+    CrcLib::SetPwmOutput(BR_DRIVE_PIN, 0);
+    CrcLib::SetPwmOutput(FR_DRIVE_PIN, 0);
+}
+
+void drivetrain_update()
 {
     // Precision Control:
 
