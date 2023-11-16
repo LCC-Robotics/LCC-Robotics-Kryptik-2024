@@ -29,7 +29,7 @@ public:
         }
 
         int8_t delta = _set_val - _output;
-        if (_timer.IsFinished()) {
+        if (delta != 0 && _timer.IsFinished()) {
             if (delta > _max_deviation) {
                 delta = _max_deviation;
             }
