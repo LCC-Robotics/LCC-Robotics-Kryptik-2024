@@ -3,8 +3,8 @@
 
 #include <CrcLib.h>
 
-#include "const.h"
 #include "helpers/utils.h"
+#include "const.h"
 
 void elevator_setup()
 {
