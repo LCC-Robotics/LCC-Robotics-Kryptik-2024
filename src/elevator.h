@@ -23,7 +23,7 @@ void elevator_update()
     if (CrcLib::ReadDigitalChannel(ELEVATOR_UP))
         elevator_val = PWM_RANGE.max;
     if (CrcLib::ReadDigitalChannel(ELEVATOR_DOWN))
-        elevator_val = PWM_RANGE.max;
+        elevator_val = PWM_RANGE.min;
 
     if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) {
         elevator_val /= PRECISION_DIVISION_FACTOR;
