@@ -3,42 +3,22 @@
 
 #include <CrcLib.h> // v1.5.0 (with cheeky fix)
 
-// ========================
-// PINS:
-
-constexpr uint8_t FL_DRIVE_PIN = CRC_PWM_1;
-constexpr uint8_t BL_DRIVE_PIN = CRC_PWM_2;
-constexpr uint8_t BR_DRIVE_PIN = CRC_PWM_3;
-constexpr uint8_t FR_DRIVE_PIN = CRC_PWM_4;
-
-// ========================
-// INPUTS:
-
-constexpr ANALOG FORWARD_CHANNEL = ANALOG::JOYSTICK1_Y;
-constexpr ANALOG YAW_CHANNEL = ANALOG::JOYSTICK1_X;
-constexpr ANALOG STRAFE_CHANNEL = ANALOG::JOYSTICK2_X;
-
-constexpr BUTTON PRECISION_CONTROL = BUTTON::L1;
-
-// ========================
-// CONST:
-constexpr uint8_t PRECISION_DIVISION_FACTOR = 2;
-
+#include "const.h"
 
 void drivetrain_setup()
 {
-    CrcLib::InitializePwmOutput(FL_DRIVE_PIN, false);
-    CrcLib::InitializePwmOutput(BL_DRIVE_PIN, false);
-    CrcLib::InitializePwmOutput(BR_DRIVE_PIN, true);
-    CrcLib::InitializePwmOutput(FR_DRIVE_PIN, true);
+    CrcLib::InitializePwmOutput(FL_DRIVE_MOTOR, false);
+    CrcLib::InitializePwmOutput(BL_DRIVE_MOTOR, false);
+    CrcLib::InitializePwmOutput(BR_DRIVE_MOTOR, true);
+    CrcLib::InitializePwmOutput(FR_DRIVE_MOTOR, true);
 }
 
 void drivetrain_die()
 {
-    CrcLib::SetPwmOutput(FL_DRIVE_PIN, 0);
-    CrcLib::SetPwmOutput(BL_DRIVE_PIN, 0);
-    CrcLib::SetPwmOutput(BR_DRIVE_PIN, 0);
-    CrcLib::SetPwmOutput(FR_DRIVE_PIN, 0);
+    CrcLib::SetPwmOutput(FL_DRIVE_MOTOR, 0);
+    CrcLib::SetPwmOutput(BL_DRIVE_MOTOR, 0);
+    CrcLib::SetPwmOutput(BR_DRIVE_MOTOR, 0);
+    CrcLib::SetPwmOutput(FR_DRIVE_MOTOR, 0);
 }
 
 void drivetrain_update()
@@ -59,7 +39,7 @@ void drivetrain_update()
 
     CrcLib::MoveHolonomic(
         foward_val, yaw_val, strafe_val,
-        FL_DRIVE_PIN, BL_DRIVE_PIN, BR_DRIVE_PIN, FR_DRIVE_PIN);
+        FL_DRIVE_MOTOR, BL_DRIVE_MOTOR, BR_DRIVE_MOTOR, FR_DRIVE_MOTOR);
 }
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_DRIVETRAIN_H_

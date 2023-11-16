@@ -3,17 +3,7 @@
 
 #include <CrcLib.h>
 
-// ========================
-// PINS:
-
-constexpr uint8_t FLYWHEEL_MOTOR_L = CRC_PWM_5;
-constexpr uint8_t FLYWHEEL_MOTOR_R = CRC_PWM_6;
-
-// ========================
-// INPUTS:
-
-constexpr ANALOG FLYWHEEL_REV = ANALOG::GACHETTE_R;
-
+#include "const.h"
 
 void flywheel_setup()
 {

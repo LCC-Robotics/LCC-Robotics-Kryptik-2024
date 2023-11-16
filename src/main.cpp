@@ -6,17 +6,9 @@
 
 #include "drivetrain.h"
 #include "elevator.h"
-#include "gripper.h"
 #include "flywheel.h"
+#include "gripper.h"
 #include "tunes.h"
-
-
-// ========================
-// DIGITAL INPUTS:
-
-constexpr BUTTON DIE_BUTTON = BUTTON::LOGO;
-
-// ========================
 
 void setup()
 {
