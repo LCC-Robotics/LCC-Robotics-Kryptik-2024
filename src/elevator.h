@@ -4,7 +4,6 @@
 #include <CrcLib.h>
 
 #include "const.h"
-#include "helpers/utils.h"
 
 void elevator_setup()
 {
@@ -21,9 +20,9 @@ void elevator_update()
     int8_t elevator_val = 0;
 
     if (CrcLib::ReadDigitalChannel(ELEVATOR_UP))
-        elevator_val = PWM_RANGE.max;
+        elevator_val = INT8_MAX;
     if (CrcLib::ReadDigitalChannel(ELEVATOR_DOWN))
-        elevator_val = PWM_RANGE.min;
+        elevator_val = INT8_MIN;
 
     if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) {
         elevator_val /= PRECISION_DIVISION_FACTOR;

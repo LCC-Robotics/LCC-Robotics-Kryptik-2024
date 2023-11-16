@@ -3,22 +3,28 @@
 
 #include <CrcLib.h>
 
+namespace utils {
+
 template <class T>
 struct Range {
     T min;
     T max;
 };
 
-constexpr Range<int8_t> PWM_RANGE { -128, 127 };
+template <class T>
+inline constexpr T map(T x, T in_min, T in_max, T out_min, T out_max)
+{
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
 
 template <class T>
-inline constexpr T threshold(T raw, T lower_threshold, T upper_threshold)
+inline constexpr T threshold(T raw, T threshold)
 {
-    // return 0 if lower_threshold < raw < upper_threshold
-    if (lower_threshold < raw || raw < upper_threshold) 
+    if (raw < threshold)
         return 0;
     else
         return raw;
 }
 
+}
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_UTILS_H_

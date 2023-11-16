@@ -57,7 +57,6 @@ constexpr ANALOG GRIPPER_CONTROL = ANALOG::GACHETTE_L;
 
 constexpr uint8_t PRECISION_DIVISION_FACTOR = 2;
 
-constexpr int8_t PWM_LOWER_THRESHOLD = -5;
-constexpr int8_t PWM_UPPER_THRESHOLD = 5;
+constexpr int8_t PWM_THRESHOLD = 5;
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_CONST_H_
