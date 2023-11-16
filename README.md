@@ -1,9 +1,9 @@
-# LCC Robotics 2023 Repository
+# LCC Robotics 2024 Repository
 
 This repo contains the code for LCC's robot for Kryptik 2024, a robotics competition hosted
 by [CRC Robotics](https://robo-crc.ca/).
 
-The project is scaffolded using the [`PlatformIO`](https://platformio.org/) framework, as it allows for flexible and platform-agnostic projections
+The project is scaffolded using the [`PlatformIO`](https://platformio.org/) framework, as it allows for flexible and platform-agnostic projects for embedded applications
 with minimal configuration.
 
 ## Cloning the Repo
