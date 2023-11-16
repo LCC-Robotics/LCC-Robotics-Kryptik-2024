@@ -48,7 +48,7 @@ constexpr BUTTON ELEVATOR_UP = BUTTON::ARROW_UP;
 constexpr BUTTON ELEVATOR_DOWN = BUTTON::ARROW_DOWN;
 
 // gripper
-constexpr ANALOG GRIPPER_CONTROL = ANALOG::GACHETTE_R;
+constexpr ANALOG GRIPPER_CONTROL = ANALOG::GACHETTE_L;
 
 
 // ============================
