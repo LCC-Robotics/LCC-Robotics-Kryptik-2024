@@ -3,7 +3,6 @@
 
 #include <CrcLib.h>
 
-constexpr int8_t PWM_SLEW_MAX_DEV = 40;
 constexpr uint32_t SLEW_CHANGE_INTERVAL = 100; // ms
 
 // https://www.embeddedrelated.com/showarticle/646.php

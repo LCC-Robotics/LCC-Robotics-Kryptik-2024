@@ -4,6 +4,7 @@
 #include <CrcLib.h> // v1.5.0 (with cheeky fix)
 
 #include "const.h"
+#include "helpers/limitSlew.h"
 
 void drivetrain_setup()
 {
@@ -25,21 +26,27 @@ void drivetrain_update()
 {
     // Precision Control:
 
-    int8_t foward_val = CrcLib::ReadAnalogChannel(FORWARD_CHANNEL);
+    static LimitSlew<int8_t> foward_slew_limiter { PWM_MAX_DEVIATION };
+    static LimitSlew<int8_t> yaw_slew_limiter { PWM_MAX_DEVIATION };
+    static LimitSlew<int8_t> strafe_slew_limiter { PWM_MAX_DEVIATION };
+
+    int8_t forward_val = CrcLib::ReadAnalogChannel(FORWARD_CHANNEL);
     int8_t yaw_val = CrcLib::ReadAnalogChannel(YAW_CHANNEL);
     int8_t strafe_val = CrcLib::ReadAnalogChannel(STRAFE_CHANNEL);
 
     if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) {
-        foward_val /= PRECISION_DIVISION_FACTOR;
+        forward_val /= PRECISION_DIVISION_FACTOR;
         yaw_val /= PRECISION_DIVISION_FACTOR;
         strafe_val /= PRECISION_DIVISION_FACTOR;
     }
 
     // Drive:
-
     CrcLib::MoveHolonomic(
-        foward_val, yaw_val, strafe_val,
-        FL_DRIVE_MOTOR, BL_DRIVE_MOTOR, BR_DRIVE_MOTOR, FR_DRIVE_MOTOR);
+        foward_slew_limiter.Update(forward_val),
+        yaw_slew_limiter.Update(yaw_val),
+        strafe_slew_limiter.Update(strafe_val),
+        FL_DRIVE_MOTOR, BL_DRIVE_MOTOR,
+        BR_DRIVE_MOTOR, FR_DRIVE_MOTOR);
 }
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_DRIVETRAIN_H_

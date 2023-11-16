@@ -4,6 +4,7 @@
 #include <CrcLib.h>
 
 #include "const.h"
+#include "helpers/limitSlew.h"
 
 void elevator_setup()
 {
@@ -17,6 +18,7 @@ void elevator_die()
 
 void elevator_update()
 {
+    static LimitSlew<int8_t> elevator_slew_limiter { PWM_MAX_DEVIATION };
     int8_t elevator_val = 0;
 
     if (CrcLib::ReadDigitalChannel(ELEVATOR_UP))
@@ -27,6 +29,8 @@ void elevator_update()
     if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) {
         elevator_val /= PRECISION_DIVISION_FACTOR;
     }
+
+    elevator_val = elevator_slew_limiter.Update(elevator_val);
 
     CrcLib::SetPwmOutput(ELEVATOR_MOTOR, elevator_val);
     CrcLib::SetPwmOutput(ELEVATOR_MOTOR, elevator_val);
