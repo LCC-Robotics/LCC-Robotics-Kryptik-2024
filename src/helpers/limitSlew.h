@@ -16,8 +16,6 @@ public:
         : _max_deviation { max_deviation }
         , _change_interval { change_interval }
         , _timer {}
-        , _set_val { 0 }
-        , _output { 0 }
     {
     }
 
@@ -28,7 +26,7 @@ public:
             _timer.Start(_change_interval);
         }
 
-        int8_t delta = _set_val - _output;
+        T delta = _set_val - _output;
         if (delta != 0 && _timer.IsFinished()) {
             if (delta > _max_deviation) {
                 delta = _max_deviation;
@@ -48,8 +46,8 @@ private:
     const uint32_t _change_interval;
     Timer _timer;
 
-    T _set_val;
-    T _output;
+    T _set_val = 0;
+    T _output = 0;
 };
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_LIMIT_SLEW_H_
