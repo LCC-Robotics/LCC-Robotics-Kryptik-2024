@@ -12,7 +12,7 @@ const Note VICTORY_TUNE[] {
     { 250, NOTE_SILENCE },
     { 250, NOTE_D3 },
     { 2000, NOTE_F3 },
-    Note::END
+    Note::END()
 };
 
 void tunes_update() {
