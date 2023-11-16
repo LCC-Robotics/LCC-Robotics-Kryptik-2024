@@ -3,8 +3,8 @@
 
 #include <CrcLib.h>
 
-#include "helpers/utils.h"
 #include "const.h"
+#include "helpers/utils.h"
 
 void elevator_setup()
 {
@@ -18,12 +18,19 @@ void elevator_die()
 
 void elevator_update()
 {
-    if (CrcLib::ReadDigitalChannel(ELEVATOR_UP)) {
-        CrcLib::SetPwmOutput(ELEVATOR_MOTOR, PWM_RANGE.min);
+    int8_t elevator_val = 0;
+
+    if (CrcLib::ReadDigitalChannel(ELEVATOR_UP))
+        elevator_val = PWM_RANGE.max;
+    if (CrcLib::ReadDigitalChannel(ELEVATOR_DOWN))
+        elevator_val = PWM_RANGE.max;
+
+    if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) {
+        elevator_val /= PRECISION_DIVISION_FACTOR;
     }
-    if (CrcLib::ReadDigitalChannel(ELEVATOR_DOWN)){
-        CrcLib::SetPwmOutput(ELEVATOR_MOTOR, PWM_RANGE.max);
-    }
+
+    CrcLib::SetPwmOutput(ELEVATOR_MOTOR, elevator_val);
+    CrcLib::SetPwmOutput(ELEVATOR_MOTOR, elevator_val);
 }
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_ELEVATOR_H_
