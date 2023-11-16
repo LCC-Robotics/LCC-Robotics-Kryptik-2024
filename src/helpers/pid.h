@@ -18,7 +18,7 @@ public:
         , _kd { kd }
         , _ki { ki }
         , _timer {}
-        , _poll_interval(poll_interval)
+        , _poll_interval{poll_interval}
     {
     }
 
