@@ -16,7 +16,7 @@ public:
         : _kp { kp }
         , _kd { kd }
         , _ki { ki }
-        , _poll_interval{poll_interval}
+        , _poll_interval { poll_interval }
         , _timer {}
     {
     }
@@ -32,7 +32,8 @@ public:
         _ierror = 0.0;
     }
 
-    void SetTarget(double target) {
+    void SetTarget(double target)
+    {
         _target_pos = target;
     }
 
@@ -44,7 +45,7 @@ public:
         }
 
         double delta = _target_pos - _current_pos;
-        if (fabs(delta) > CLOSE_ENOUGH && _timer.IsFinished()) {
+        if (_timer.IsFinished() && fabs(delta) > CLOSE_ENOUGH) {
             _error = delta;
             _derror = (_error - _last_error) / (double)_poll_interval;
             _ierror += _error * (double)_poll_interval;

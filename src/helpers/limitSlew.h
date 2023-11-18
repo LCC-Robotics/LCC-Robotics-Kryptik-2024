@@ -27,7 +27,7 @@ public:
         }
 
         T delta = _set_val - _output;
-        if (delta != 0 && _timer.IsFinished()) {
+        if (_timer.IsFinished() && delta != 0) {
             if (delta > _max_deviation) {
                 delta = _max_deviation;
             }
