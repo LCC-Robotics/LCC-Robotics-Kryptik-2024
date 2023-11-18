@@ -34,7 +34,7 @@ public:
             if (delta < _max_deviation) {
                 delta = -_max_deviation;
             }
-            _set_val += delta;
+            _output += delta;
             
             _timer.Next();
         }
