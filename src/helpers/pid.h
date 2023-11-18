@@ -5,7 +5,6 @@
 
 constexpr uint32_t PID_POLL_INTERVAL = 100; // ms
 
-template <class T>
 class PID {
     using Timer = CrcLib::Timer;
 
@@ -17,15 +16,15 @@ public:
         : _kp { kp }
         , _kd { kd }
         , _ki { ki }
-        , _timer {}
         , _poll_interval{poll_interval}
+        , _timer {}
     {
     }
 
-    void Override(T set_val)
+    void Override(double set_val)
     {
-        _set_val = (double)set_val;
-        _output = (double)set_val;
+        _current_pos = (double)set_val;
+        _target_pos = (double)set_val;
 
         _last_error = 0.0;
         _error = 0.0;
@@ -33,28 +32,37 @@ public:
         _ierror = 0.0;
     }
 
-    T Update(T set_val)
+    void SetTarget(double target) {
+        _target_pos = target;
+    }
+
+    double Update(double current_pos)
     {
-        if (_set_val != set_val) {
-            _set_val = (double)set_val;
+        if (_current_pos != current_pos) {
+            _current_pos = (double)current_pos;
             _timer.Start(_poll_interval);
         }
 
-        double delta = _set_val - _output;
+        double delta = _target_pos - _current_pos;
         if (fabs(delta) > CLOSE_ENOUGH && _timer.IsFinished()) {
             _error = delta;
-            _derror = (_error - _last_error) / _poll_interval;
-            _ierror += _error * _poll_interval;
+            _derror = (_error - _last_error) / (double)_poll_interval;
+            _ierror += _error * (double)_poll_interval;
 
             // PID Function
             _output = _kp * _error + _kd * _derror + _ki * _ierror;
             _last_error = _error;
+
+            _timer.Next();
         }
 
-        return (T)_output;
+        return _output;
     }
 
 private:
+    const uint32_t _poll_interval;
+    Timer _timer;
+
     const double _kp;
     const double _kd;
     const double _ki;
@@ -64,10 +72,8 @@ private:
     double _derror = 0;
     double _ierror = 0;
 
-    const uint32_t _poll_interval;
-    Timer _timer;
-
-    double _set_val = 0;
+    double _target_pos = 0;
+    double _current_pos = 0;
     double _output = 0;
 };
 

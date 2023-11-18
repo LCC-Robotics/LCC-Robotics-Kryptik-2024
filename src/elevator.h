@@ -2,9 +2,11 @@
 #define LCC_ROBOTICS_KRYPTIK_2024_SRC_ELEVATOR_H_
 
 #include <CrcLib.h>
+#include <Encoder.h>
 
 #include "const.h"
 #include "helpers/limitSlew.h"
+#include "helpers/pid.h"
 
 void elevator_setup()
 {
@@ -18,7 +20,9 @@ void elevator_die()
 
 void elevator_update()
 {
+    static PID elevator_pid { 1.0, 0.0, 0.0 };
     static LimitSlew<int8_t> elevator_slew_limiter { PWM_MAX_DEVIATION };
+
     int8_t elevator_val = 0;
 
     if (CrcLib::ReadDigitalChannel(ELEVATOR_UP))

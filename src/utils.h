@@ -12,18 +12,15 @@ struct Range {
 };
 
 template <class T>
-inline constexpr T map(T x, T in_min, T in_max, T out_min, T out_max)
+inline constexpr T map(T raw, T in_min, T in_max, T out_min, T out_max)
 {
-    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    return (raw - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
 template <class T>
 inline constexpr T threshold(T raw, T threshold)
 {
-    if (raw < threshold)
-        return 0;
-    else
-        return raw;
+    return raw > threshold ? raw : 0;
 }
 
 }

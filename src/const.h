@@ -3,6 +3,8 @@
 
 #include <CrcLib.h>
 
+#include "utils.h"
+
 using PIN = uint8_t;
 
 // ============================

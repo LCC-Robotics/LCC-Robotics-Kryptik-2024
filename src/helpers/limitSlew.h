@@ -35,17 +35,18 @@ public:
                 delta = -_max_deviation;
             }
             _set_val += delta;
-            _timer.Start(_change_interval);
+            
+            _timer.Next();
         }
 
         return _output;
     }
 
 private:
-    const T _max_deviation;
     const uint32_t _change_interval;
     Timer _timer;
 
+    const T _max_deviation;
     T _set_val = 0;
     T _output = 0;
 };
