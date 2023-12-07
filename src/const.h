@@ -3,9 +3,14 @@
 
 #include <CrcLib.h>
 
-#include "utils.h"
-
 using PIN = uint8_t;
+
+// ============================
+// CONST:
+// ============================
+
+constexpr uint8_t PRECISION_DIVISION_FACTOR = 2;
+constexpr int8_t PWM_THRESHOLD = 5;
 
 // ============================
 // PINS:
@@ -28,12 +33,22 @@ constexpr PIN ELEVATOR_MOTOR = CRC_PWM_7;
 constexpr PIN GRIPPER_MOTOR_L = CRC_PWM_8;
 constexpr PIN GRIPPER_MOTOR_R = CRC_PWM_9;
 
+// encoders
+constexpr PIN ELEVATOR_ENCO_A = CRC_ENCO_A;
+constexpr PIN ELEVATOR_ENCO_B = CRC_ENCO_B;
+
 // ============================
 // INPUTS:
 // ============================
 
+// tune
+constexpr BUTTON VICTORY_BUTTON = BUTTON::START;
+
 // die
 constexpr BUTTON DIE_BUTTON = BUTTON::LOGO;
+
+// drivelock
+constexpr BUTTON LOCK_BUTTON = BUTTON::SELECT;
 
 // drivetrain
 constexpr ANALOG FORWARD_CHANNEL = ANALOG::JOYSTICK1_Y;
@@ -51,15 +66,5 @@ constexpr BUTTON ELEVATOR_DOWN = BUTTON::ARROW_DOWN;
 
 // gripper
 constexpr ANALOG GRIPPER_CONTROL = ANALOG::GACHETTE_L;
-
-
-// ============================
-// CONST:
-// ============================
-
-constexpr uint8_t PRECISION_DIVISION_FACTOR = 2;
-
-constexpr int8_t PWM_THRESHOLD = 5;
-constexpr int8_t PWM_MAX_DEVIATION = 30;
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_CONST_H_

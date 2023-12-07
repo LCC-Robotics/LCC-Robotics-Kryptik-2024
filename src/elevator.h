@@ -2,11 +2,15 @@
 #define LCC_ROBOTICS_KRYPTIK_2024_SRC_ELEVATOR_H_
 
 #include <CrcLib.h>
+#define ENCODER_OPTIMIZE_INTERRUPTS
 #include <Encoder.h>
 
 #include "const.h"
-#include "helpers/limitSlew.h"
 #include "helpers/pid.h"
+
+
+Encoder elevator_encoder {ELEVATOR_ENCO_A, ELEVATOR_ENCO_B};
+PID elevator_pid { 1.0, 0.0, 0.0 };
 
 void elevator_setup()
 {
@@ -20,9 +24,6 @@ void elevator_die()
 
 void elevator_update()
 {
-    static PID elevator_pid { 1.0, 0.0, 0.0 };
-    static LimitSlew<int8_t> elevator_slew_limiter { PWM_MAX_DEVIATION };
-
     int8_t elevator_val = 0;
 
     if (CrcLib::ReadDigitalChannel(ELEVATOR_UP))
@@ -30,13 +31,9 @@ void elevator_update()
     if (CrcLib::ReadDigitalChannel(ELEVATOR_DOWN))
         elevator_val = INT8_MIN;
 
-    if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) {
+    if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) 
         elevator_val /= PRECISION_DIVISION_FACTOR;
-    }
 
-    elevator_val = elevator_slew_limiter.Update(elevator_val);
-
-    CrcLib::SetPwmOutput(ELEVATOR_MOTOR, elevator_val);
     CrcLib::SetPwmOutput(ELEVATOR_MOTOR, elevator_val);
 }
 

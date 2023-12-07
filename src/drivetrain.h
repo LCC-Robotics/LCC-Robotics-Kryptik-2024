@@ -4,7 +4,6 @@
 #include <CrcLib.h> // v1.5.0 (with cheeky fix)
 
 #include "const.h"
-#include "helpers/limitSlew.h"
 
 void drivetrain_setup()
 {
@@ -24,12 +23,10 @@ void drivetrain_die()
 
 void drivetrain_update()
 {
+    if (CrcLib::ReadDigitalChannel(LOCK_BUTTON))
+        return drivetrain_die();
+
     // Precision Control:
-
-    static LimitSlew<int8_t> foward_slew_limiter { PWM_MAX_DEVIATION };
-    static LimitSlew<int8_t> yaw_slew_limiter { PWM_MAX_DEVIATION };
-    static LimitSlew<int8_t> strafe_slew_limiter { PWM_MAX_DEVIATION };
-
     int8_t forward_val = CrcLib::ReadAnalogChannel(FORWARD_CHANNEL);
     int8_t yaw_val = CrcLib::ReadAnalogChannel(YAW_CHANNEL);
     int8_t strafe_val = CrcLib::ReadAnalogChannel(STRAFE_CHANNEL);
@@ -42,9 +39,7 @@ void drivetrain_update()
 
     // Drive:
     CrcLib::MoveHolonomic(
-        foward_slew_limiter.Update(forward_val),
-        yaw_slew_limiter.Update(yaw_val),
-        strafe_slew_limiter.Update(strafe_val),
+        forward_val, yaw_val, strafe_val,
         FL_DRIVE_MOTOR, BL_DRIVE_MOTOR,
         BR_DRIVE_MOTOR, FR_DRIVE_MOTOR);
 }

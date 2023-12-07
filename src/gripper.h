@@ -4,6 +4,7 @@
 #include <CrcLib.h>
 
 #include "const.h"
+#include "utils.h"
 
 void gripper_setup()
 {
@@ -18,7 +19,11 @@ void gripper_die()
 }
 void gripper_update()
 {
-    int8_t set_pos = CrcLib::ReadAnalogChannel(GRIPPER_CONTROL);
+    int8_t set_pos = utils::threshold(
+        utils::map<int8_t>(
+            CrcLib::ReadAnalogChannel(GRIPPER_CONTROL),
+            INT8_MIN, INT8_MAX, 0, INT8_MAX),
+        PWM_THRESHOLD);
 
     CrcLib::SetPwmOutput(GRIPPER_MOTOR_L, set_pos);
     CrcLib::SetPwmOutput(GRIPPER_MOTOR_R, set_pos);
