@@ -13,11 +13,11 @@ class PID {
 public:
     explicit PID(const float kp = 1.0, const float kd = 0.0, const float ki = 0.0,
         const uint32_t poll_interval = PID_POLL_INTERVAL)
-        : _kp { kp }
+        : _poll_interval { poll_interval }
+        , _timer {}
+        , _kp { kp }
         , _kd { kd }
         , _ki { ki }
-        , _poll_interval { poll_interval }
-        , _timer {}
     {
     }
 
