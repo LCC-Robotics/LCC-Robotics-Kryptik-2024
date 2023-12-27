@@ -13,6 +13,13 @@ struct Range {
     T max;
 };
 
+template <class T>
+constexpr inline T percent(T val, int percent)
+{
+    int i = val;
+    return (i * percent) / 100;
+}
+
 constexpr inline bool almost_equal(double a, double b, double EPSILON = DBL_EPSILON)
 {
     auto diff = a - b;

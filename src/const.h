@@ -9,7 +9,7 @@ using PIN = uint8_t;
 // CONST:
 // ============================
 
-constexpr int8_t PRECISION_DIVISION_FACTOR = 2;
+constexpr int PRECISION_PERCENT = 50;
 constexpr int8_t ANALOG_THRESHOLD = 5;
 
 // ============================

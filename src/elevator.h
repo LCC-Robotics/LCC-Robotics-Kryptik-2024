@@ -1,6 +1,7 @@
 #ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_ELEVATOR_H_
 #define LCC_ROBOTICS_KRYPTIK_2024_SRC_ELEVATOR_H_
 
+#include "utils.h"
 #include <CrcLib.h>
 #define ENCODER_OPTIMIZE_INTERRUPTS
 #include <Encoder.h>
@@ -31,7 +32,7 @@ void elevator_update()
         elevator_val = INT8_MIN;
 
     if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL))
-        elevator_val /= PRECISION_DIVISION_FACTOR;
+        elevator_val = utils::percent(elevator_val, PRECISION_PERCENT);
 
     CrcLib::SetPwmOutput(ELEVATOR_MOTOR, elevator_val);
 }

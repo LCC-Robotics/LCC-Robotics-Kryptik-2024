@@ -4,6 +4,7 @@
 #include <CrcLib.h> 
 
 #include "const.h"
+#include "utils.h"
 
 void drivetrain_setup()
 {
@@ -29,9 +30,9 @@ void drivetrain_update()
 
     // Precision Control:
     if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) {
-        forward_val /= PRECISION_DIVISION_FACTOR;
-        yaw_val /= PRECISION_DIVISION_FACTOR;
-        strafe_val /= PRECISION_DIVISION_FACTOR;
+        forward_val = utils::percent(forward_val, PRECISION_PERCENT);
+        yaw_val = utils::percent(yaw_val, PRECISION_PERCENT);
+        strafe_val = utils::percent(strafe_val, PRECISION_PERCENT);
     }
 
     // Drive:
