@@ -8,9 +8,8 @@
 #include "const.h"
 #include "helpers/pid.h"
 
-
-Encoder elevator_encoder {ELEVATOR_ENCO_A, ELEVATOR_ENCO_B};
-PID elevator_pid { 1.0, 0.0, 0.0 };
+Encoder elevator_encoder { ELEVATOR_ENCO_A, ELEVATOR_ENCO_B };
+PID elevator_pid { 1.0, 0.0, 0.0, 100, 0.05 };
 
 void elevator_setup()
 {
@@ -31,7 +30,7 @@ void elevator_update()
     if (CrcLib::ReadDigitalChannel(ELEVATOR_DOWN))
         elevator_val = INT8_MIN;
 
-    if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) 
+    if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL))
         elevator_val /= PRECISION_DIVISION_FACTOR;
 
     CrcLib::SetPwmOutput(ELEVATOR_MOTOR, elevator_val);

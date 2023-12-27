@@ -1,7 +1,7 @@
 #ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_DRIVETRAIN_H_
 #define LCC_ROBOTICS_KRYPTIK_2024_SRC_DRIVETRAIN_H_
 
-#include <CrcLib.h> // v1.5.0 (with cheeky fix)
+#include <CrcLib.h> 
 
 #include "const.h"
 
@@ -23,14 +23,11 @@ void drivetrain_die()
 
 void drivetrain_update()
 {
-    if (CrcLib::ReadDigitalChannel(LOCK_BUTTON))
-        return drivetrain_die();
-
-    // Precision Control:
     int8_t forward_val = CrcLib::ReadAnalogChannel(FORWARD_CHANNEL);
     int8_t yaw_val = CrcLib::ReadAnalogChannel(YAW_CHANNEL);
     int8_t strafe_val = CrcLib::ReadAnalogChannel(STRAFE_CHANNEL);
 
+    // Precision Control:
     if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) {
         forward_val /= PRECISION_DIVISION_FACTOR;
         yaw_val /= PRECISION_DIVISION_FACTOR;

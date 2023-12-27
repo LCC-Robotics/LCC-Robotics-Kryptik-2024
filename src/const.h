@@ -9,8 +9,8 @@ using PIN = uint8_t;
 // CONST:
 // ============================
 
-constexpr uint8_t PRECISION_DIVISION_FACTOR = 2;
-constexpr int8_t PWM_THRESHOLD = 5;
+constexpr int8_t PRECISION_DIVISION_FACTOR = 2;
+constexpr int8_t ANALOG_THRESHOLD = 5;
 
 // ============================
 // PINS:

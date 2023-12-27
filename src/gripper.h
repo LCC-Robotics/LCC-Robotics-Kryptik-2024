@@ -19,11 +19,7 @@ void gripper_die()
 }
 void gripper_update()
 {
-    int8_t set_pos = utils::threshold(
-        utils::map<int8_t>(
-            CrcLib::ReadAnalogChannel(GRIPPER_CONTROL),
-            INT8_MIN, INT8_MAX, 0, INT8_MAX),
-        PWM_THRESHOLD);
+    auto set_pos = utils::convert_analog(CrcLib::ReadAnalogChannel(GRIPPER_CONTROL));
 
     CrcLib::SetPwmOutput(GRIPPER_MOTOR_L, set_pos);
     CrcLib::SetPwmOutput(GRIPPER_MOTOR_R, set_pos);

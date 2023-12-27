@@ -20,11 +20,7 @@ void flywheel_die()
 
 void flywheel_update()
 {
-    const auto flywheel_speed = utils::threshold(
-        utils::map<int8_t>(
-            CrcLib::ReadAnalogChannel(ANALOG::GACHETTE_R),
-            INT8_MIN, INT8_MAX, 0, INT8_MAX),
-        PWM_THRESHOLD);
+    const auto flywheel_speed = utils::convert_analog(CrcLib::ReadAnalogChannel(ANALOG::GACHETTE_R));
 
     CrcLib::SetPwmOutput(FLYWHEEL_MOTOR_L, flywheel_speed);
     CrcLib::SetPwmOutput(FLYWHEEL_MOTOR_R, flywheel_speed);

@@ -2,22 +2,23 @@
 #define LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_PID_H_
 
 #include <CrcLib.h>
+#include <utils.h>
 
-constexpr uint32_t PID_POLL_INTERVAL = 100; // ms
+namespace {
+using Timer = CrcLib::Timer;
+using utils::almost_equal;
+}
 
 class PID {
-    using Timer = CrcLib::Timer;
-
-    static constexpr float CLOSE_ENOUGH = 0.05;
-
 public:
     explicit PID(const float kp = 1.0, const float kd = 0.0, const float ki = 0.0,
-        const uint32_t poll_interval = PID_POLL_INTERVAL)
+        const uint32_t poll_interval = 100, const double epsilon = DBL_EPSILON)
         : _poll_interval { poll_interval }
-        , _timer {}
+        , _epsilon { epsilon }
         , _kp { kp }
         , _kd { kd }
         , _ki { ki }
+        , _timer {}
     {
     }
 
@@ -44,9 +45,8 @@ public:
             _timer.Start(_poll_interval);
         }
 
-        double delta = _target_pos - _current_pos;
-        if (_timer.IsFinished() && fabs(delta) > CLOSE_ENOUGH) {
-            _error = delta;
+        if (_timer.IsFinished() && !almost_equal(_target_pos, _current_pos, _epsilon)) {
+            _error = _target_pos - _current_pos;
             _derror = (_error - _last_error) / (double)_poll_interval;
             _ierror += _error * (double)_poll_interval;
 
@@ -62,11 +62,13 @@ public:
 
 private:
     const uint32_t _poll_interval;
-    Timer _timer;
+    const double _epsilon;
 
     const double _kp;
     const double _kd;
     const double _ki;
+
+    Timer _timer;
 
     double _last_error = 0;
     double _error = 0;

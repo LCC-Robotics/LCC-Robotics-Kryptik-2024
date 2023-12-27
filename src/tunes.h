@@ -32,10 +32,10 @@ const Note NON_NOBIS_SOLUM[] {
     Note::END()
 };
 
-bool flop;
-
 void tunes_update()
 {
+    static bool flop;
+
     if (CrcLib::ReadDigitalChannel(VICTORY_BUTTON)) {
         CrcLib::PlayTune(flop ? VICTORY_TUNE : NON_NOBIS_SOLUM, false);
         flop = !flop;
