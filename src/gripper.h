@@ -4,7 +4,7 @@
 #include <CrcLib.h>
 
 #include "const.h"
-#include "utils.h"
+#include "helpers.h"
 
 void gripper_setup()
 {
@@ -19,7 +19,7 @@ void gripper_die()
 }
 void gripper_update()
 {
-    auto set_pos = utils::convert_analog(CrcLib::ReadAnalogChannel(GRIPPER_CONTROL));
+    auto set_pos = helpers::convert_analog(CrcLib::ReadAnalogChannel(GRIPPER_CONTROL));
 
     CrcLib::SetPwmOutput(GRIPPER_MOTOR_L, set_pos);
     CrcLib::SetPwmOutput(GRIPPER_MOTOR_R, set_pos);

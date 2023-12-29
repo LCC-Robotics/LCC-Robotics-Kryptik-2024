@@ -7,7 +7,7 @@
 #include <Encoder.h>
 
 #include "const.h"
-#include "helpers/pid.h"
+#include "pid.h"
 
 Encoder elevator_encoder { ELEVATOR_ENCO_A, ELEVATOR_ENCO_B };
 PID elevator_pid { 1.0, 0.0, 0.0, 100, 0.05 };

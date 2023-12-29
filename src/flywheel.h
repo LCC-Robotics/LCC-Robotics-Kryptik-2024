@@ -4,7 +4,7 @@
 #include <CrcLib.h>
 
 #include "const.h"
-#include "utils.h"
+#include "helpers.h"
 
 void flywheel_setup()
 {
@@ -20,7 +20,7 @@ void flywheel_die()
 
 void flywheel_update()
 {
-    const auto flywheel_speed = utils::convert_analog(CrcLib::ReadAnalogChannel(ANALOG::GACHETTE_R));
+    const auto flywheel_speed = helpers::convert_analog(CrcLib::ReadAnalogChannel(ANALOG::GACHETTE_R));
 
     CrcLib::SetPwmOutput(FLYWHEEL_MOTOR_L, flywheel_speed);
     CrcLib::SetPwmOutput(FLYWHEEL_MOTOR_R, flywheel_speed);
