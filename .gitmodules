@@ -1,3 +1,0 @@
-[submodule "lib/CrcLib"]
-	path = lib/CrcLib
-	url = https://github.com/LCC-Robotics/CrcLib
