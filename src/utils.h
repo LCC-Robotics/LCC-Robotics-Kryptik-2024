@@ -5,18 +5,12 @@
 
 namespace utils {
 
+
 template <class T>
 struct Range {
     T min;
     T max;
 };
-
-template <class T>
-constexpr inline T percent(T val, int percent)
-{
-    int i = val;
-    return (i * percent) / 100;
-}
 
 constexpr inline bool almost_equal(double a, double b, double EPSILON = DBL_EPSILON)
 {
@@ -35,6 +29,7 @@ constexpr inline T threshold(T raw, T thresh)
 {
     return raw > thresh ? raw : 0;
 }
+
 
 }
 

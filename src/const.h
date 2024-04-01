@@ -26,9 +26,11 @@ constexpr PIN FR_DRIVE_MOTOR = CRC_PWM_4;
 constexpr PIN FLYWHEEL_MOTOR_TOP = CRC_PWM_5;
 constexpr PIN FLYWHEEL_MOTOR_BOT = CRC_PWM_6;
 
-// elevator
-constexpr PIN ELEVATOR_MOTOR = CRC_PWM_7;
+// conveyor
+constexpr PIN CONVEYOR_MOTOR = CRC_PWM_7;
 
+// elevator
+constexpr PIN ELEVATOR_MOTOR = CRC_PWM_8;
 
 // encoders
 constexpr PIN ELEVATOR_ENCO_A = CRC_ENCO_A;
@@ -47,9 +49,12 @@ constexpr BUTTON DIE_BUTTON = BUTTON::LOGO;
 // drivelock
 constexpr BUTTON PRECISION_CONTROL = BUTTON::L1;
 
+// conveyor
+constexpr BUTTON CONVEYOR_TOGGLE = BUTTON::SELECT;
+
 // elevator
-constexpr BUTTON ELEVATOR_UP = BUTTON::ARROW_UP;
-constexpr BUTTON ELEVATOR_DOWN = BUTTON::ARROW_DOWN;
+constexpr BUTTON ELEVATOR_UP_BUTTON = BUTTON::ARROW_UP;
+constexpr BUTTON ELEVATOR_DOWN_BUTTON = BUTTON::ARROW_DOWN;
 
 // drivetrain
 constexpr ANALOG FORWARD_CHANNEL = ANALOG::JOYSTICK1_Y;

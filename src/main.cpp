@@ -3,9 +3,11 @@
 // CrcLib Reference:
 // https://robocrc.atlassian.net/wiki/spaces/AR/pages/403767325/CrcLib+Functions+-+An+overview
 
+#include "conveyor.h"
 #include "drivetrain.h"
-#include "multi.h"
 #include "flywheel.h"
+#include "multi.h"
+#include "sorter.h"
 #include "tunes.h"
 
 void setup()
@@ -14,6 +16,8 @@ void setup()
 
     drivetrain_setup();
     multi_setup();
+    sorter_setup();
+    conveyor_setup();
     flywheel_setup();
 
 #ifdef DEBUG // only start serial if in debug mode (serial can affect performance)
@@ -25,6 +29,7 @@ void die()
 {
     drivetrain_die();
     multi_die();
+    conveyor_die();
     flywheel_die();
 }
 
@@ -39,5 +44,8 @@ void loop()
     drivetrain_update();
     multi_update();
     flywheel_update();
+    sorter_update();
+    conveyor_update();
+
     tunes_update();
 }
