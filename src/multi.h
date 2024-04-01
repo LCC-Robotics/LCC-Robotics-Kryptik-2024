@@ -12,17 +12,17 @@
 Encoder elevator_encoder { ELEVATOR_ENCO_A, ELEVATOR_ENCO_B };
 PID elevator_pid { 1.0, 0.0, 0.0, 100, 0.05 };
 
-void elevator_setup()
+void multi_setup()
 {
     CrcLib::InitializePwmOutput(ELEVATOR_MOTOR, false);
 }
 
-void elevator_die()
+void multi_die()
 {
     CrcLib::SetPwmOutput(ELEVATOR_MOTOR, 0);
 }
 
-void elevator_update()
+void multi_update()
 {
     int8_t elevator_val = 0;
 

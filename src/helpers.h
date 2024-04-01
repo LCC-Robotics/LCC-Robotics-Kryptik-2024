@@ -8,7 +8,7 @@
 
 namespace helpers {
 
-constexpr inline int8_t convert_analog(int8_t val, int8_t vmin = INT8_MIN, int8_t vmax = INT8_MAX, int8_t thresh = ANALOG_THRESHOLD)
+constexpr inline int8_t convert_analog(int8_t val, int8_t vmin = INT8_MIN, int8_t vmax = INT8_MAX, int8_t thresh = 5)
 {
     return utils::threshold(
         utils::map<int8_t>(val, vmin, vmax, 0, vmax),

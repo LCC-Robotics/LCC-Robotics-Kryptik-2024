@@ -31,9 +31,9 @@ constexpr inline T map(T raw, T in_min, T in_max, T out_min, T out_max)
 }
 
 template <class T>
-constexpr inline T threshold(T raw, T threshold)
+constexpr inline T threshold(T raw, T thresh)
 {
-    return raw > threshold ? raw : 0;
+    return raw > thresh ? raw : 0;
 }
 
 }

@@ -10,7 +10,7 @@ using PIN = uint8_t;
 // ============================
 
 constexpr int PRECISION_PERCENT = 50;
-constexpr int8_t ANALOG_THRESHOLD = 5;
+constexpr int TICK_TIME = 1;
 
 // ============================
 // PINS:
@@ -23,17 +23,14 @@ constexpr PIN BR_DRIVE_MOTOR = CRC_PWM_3;
 constexpr PIN FR_DRIVE_MOTOR = CRC_PWM_4;
 
 // flywheel
-constexpr PIN FLYWHEEL_MOTOR_L = CRC_PWM_5;
-constexpr PIN FLYWHEEL_MOTOR_R = CRC_PWM_6;
+constexpr PIN FLYWHEEL_MOTOR_TOP = CRC_PWM_5;
+constexpr PIN FLYWHEEL_MOTOR_BOT = CRC_PWM_6;
 
 // elevator
 constexpr PIN ELEVATOR_MOTOR = CRC_PWM_7;
 
-// gripper 
-constexpr PIN GRIPPER_MOTOR_L = CRC_PWM_8;
-constexpr PIN GRIPPER_MOTOR_R = CRC_PWM_9;
 
-    // encoders
+// encoders
 constexpr PIN ELEVATOR_ENCO_A = CRC_ENCO_A;
 constexpr PIN ELEVATOR_ENCO_B = CRC_ENCO_B;
 
@@ -48,7 +45,6 @@ constexpr BUTTON VICTORY_BUTTON = BUTTON::START;
 constexpr BUTTON DIE_BUTTON = BUTTON::LOGO;
 
 // drivelock
-constexpr BUTTON LOCK_BUTTON = BUTTON::SELECT;
 constexpr BUTTON PRECISION_CONTROL = BUTTON::L1;
 
 // elevator
@@ -61,7 +57,8 @@ constexpr ANALOG YAW_CHANNEL = ANALOG::JOYSTICK1_X;
 constexpr ANALOG STRAFE_CHANNEL = ANALOG::JOYSTICK2_X;
 
 // flywheel
-constexpr ANALOG FLYWHEEL_REV = ANALOG::GACHETTE_R;
+constexpr BUTTON FLYWHEEL_FAR_BUTTON = BUTTON::COLORS_UP;
+constexpr BUTTON FLYWHEEL_CLOSE_BUTTON = BUTTON::COLORS_DOWN;
 
 // gripper
 constexpr ANALOG GRIPPER_CONTROL = ANALOG::GACHETTE_L;

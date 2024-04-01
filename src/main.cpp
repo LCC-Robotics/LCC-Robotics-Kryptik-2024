@@ -4,9 +4,8 @@
 // https://robocrc.atlassian.net/wiki/spaces/AR/pages/403767325/CrcLib+Functions+-+An+overview
 
 #include "drivetrain.h"
-#include "elevator.h"
+#include "multi.h"
 #include "flywheel.h"
-#include "gripper.h"
 #include "tunes.h"
 
 void setup()
@@ -14,8 +13,7 @@ void setup()
     CrcLib::Initialize();
 
     drivetrain_setup();
-    elevator_setup();
-    gripper_setup();
+    multi_setup();
     flywheel_setup();
 
 #ifdef DEBUG // only start serial if in debug mode (serial can affect performance)
@@ -26,8 +24,7 @@ void setup()
 void die()
 {
     drivetrain_die();
-    elevator_die();
-    gripper_die();
+    multi_die();
     flywheel_die();
 }
 
@@ -40,8 +37,7 @@ void loop()
     }
 
     drivetrain_update();
-    elevator_update();
-    gripper_update();
+    multi_update();
     flywheel_update();
     tunes_update();
 }
