@@ -5,9 +5,10 @@
 #include <etl/debounce.h>
 
 #include "const.h"
-
+#include "helpers.h"
 
 // TODO: Find optimal values for flywheel
+// TODO: Implement feeding system
 enum FlywheelState : int8_t {
     FW_OFF = 0,
     FW_CLOSE = 90,
@@ -34,7 +35,7 @@ void flywheel_die()
 
 void flywheel_update()
 {
-    int8_t flywheel_state = FW_OFF;
+    int8_t flywheel_state = helpers::convert_analog(CrcLib::ReadAnalogChannel(FW_MANUAL_CHANNEL));
 
     if (CrcLib::ReadDigitalChannel(FW_FAR_BUTTON)) {
         flywheel_state = FW_FAR;

@@ -1,6 +1,7 @@
 #ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_MISC_H_
 #define LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_MISC_H_
 
+
 #include <stdint.h>
 
 #include "utils.h"

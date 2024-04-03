@@ -41,7 +41,6 @@ constexpr PIN MULTI_ELEV_ENCO_B = CRC_ENCO_B;
 constexpr PIN SORT_DOOR_MOTOR = CRC_PWM_11;
 constexpr PIN SORT_DIVERT_MOTOR = CRC_PWM_12;
 
-
 // ============================
 // INPUTS:
 // ============================
@@ -79,5 +78,7 @@ constexpr ANALOG STRAFE_CHANNEL = ANALOG::JOYSTICK2_X;
 constexpr BUTTON FW_FAR_BUTTON = BUTTON::L1;
 constexpr BUTTON FW_CLOSE_BUTTON = BUTTON::R1;
 
+constexpr ANALOG FW_FEED_CHANNEL = ANALOG::GACHETTE_L;
+constexpr ANALOG FW_MANUAL_CHANNEL = ANALOG::GACHETTE_R;
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_CONST_H_
