@@ -5,7 +5,6 @@
 
 namespace utils {
 
-
 template <class T>
 struct Range {
     T min;
@@ -29,7 +28,6 @@ constexpr inline T threshold(T raw, T thresh)
 {
     return raw > thresh ? raw : 0;
 }
-
 
 }
 

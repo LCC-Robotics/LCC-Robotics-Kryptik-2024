@@ -8,10 +8,10 @@
 #include "const.h"
 #include "pid.h"
 
-enum MultEState : int8_t {
-    MULTE_OFF = 0,
-    MULTE_UP = 90,
-    MULTE_DOWN = -90,
+enum ElevState : int8_t {
+    ELEV_OFF = 0,
+    ELEV_UP = 90,
+    ELEV_DOWN = -90,
 };
 
 enum PlacerState : int8_t {
@@ -41,15 +41,19 @@ void multi_die()
 
 void multi_update()
 {
-    int8_t multe_val = MULTE_OFF;
+    // ELEVATOR
+
+    int8_t multe_val = ELEV_OFF;
 
     if (CrcLib::ReadDigitalChannel(MULTI_ELEV_UP_BUTTON)) {
-        multe_val = MULTE_UP;
+        multe_val = ELEV_UP;
     } else if (CrcLib::ReadDigitalChannel(MULTI_ELEV_DOWN_BUTTON)) {
-        multe_val = MULTE_DOWN;
+        multe_val = ELEV_DOWN;
     } 
 
     CrcLib::SetPwmOutput(MULTI_ELEV_MOTOR, multe_val);
+
+    // PLACER
 
     int8_t placer_val = PLA_OFF;
 
@@ -61,11 +65,6 @@ void multi_update()
     
     CrcLib::SetPwmOutput(MULTI_PLACER_MOTOR, placer_val);
     CrcLib::SetPwmOutput(MULTI_GUIDE_MOTOR, placer_val);
-}
-
-void ball_placer (){
-
-
 }
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_ELEVATOR_H_

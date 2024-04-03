@@ -44,10 +44,8 @@ void loop()
 
     drivetrain_update();
     multi_update();
-    ball_placer();
     flywheel_update();
     sorter_update();
     pickup_update();
-
     tunes_update();
 }
