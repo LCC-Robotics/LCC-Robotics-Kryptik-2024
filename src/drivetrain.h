@@ -1,7 +1,7 @@
 #ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_DRIVETRAIN_H_
 #define LCC_ROBOTICS_KRYPTIK_2024_SRC_DRIVETRAIN_H_
 
-#include <CrcLib.h> 
+#include <CrcLib.h>
 
 #include "const.h"
 
@@ -28,9 +28,12 @@ void drivetrain_update()
     int8_t strafe_val = CrcLib::ReadAnalogChannel(STRAFE_CHANNEL);
 
     // Precision Control:
-    if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL)) {
+    if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL_L)) {
         forward_val = (int8_t)(forward_val / 2);
         yaw_val = (int8_t)(yaw_val / 2);
+    }
+
+    if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL_R)) {
         strafe_val = (int8_t)(strafe_val / 2);
     }
 
