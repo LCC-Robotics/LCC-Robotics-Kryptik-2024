@@ -13,10 +13,7 @@ enum PickupState : int8_t {
     PU_OFF = 0
 };
 
-void setup()
-{
-    CrcLib::InitializePwmOutput(PICKUP_MOTOR, false);
-}
+void setup() { CrcLib::InitializePwmOutput(PICKUP_MOTOR, false); }
 
 void die() { CrcLib::SetPwmOutput(PICKUP_MOTOR, 0); }
 
