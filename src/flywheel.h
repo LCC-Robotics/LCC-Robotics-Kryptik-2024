@@ -7,7 +7,7 @@
 #include "const.h"
 #include "helpers.h"
 
-namespace FlyWheel {
+namespace Flywheel {
 // TODO: Find optimal values for flywheel
 // TODO: Implement feeding system
 enum FlywheelState : int8_t {

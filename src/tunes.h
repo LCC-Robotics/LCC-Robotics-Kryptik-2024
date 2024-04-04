@@ -5,6 +5,7 @@
 
 #include "const.h"
 
+namespace Tunes {
 const Note VICTORY_TUNE[] {
     { 225, NOTE_AS4 },
     { 150, NOTE_D5 },
@@ -32,7 +33,7 @@ const Note NON_NOBIS_SOLUM[] {
     Note::END()
 };
 
-void tunes_update()
+void update(bool ticked)
 {
     static bool flop;
 
@@ -41,5 +42,7 @@ void tunes_update()
         flop = !flop;
     }
 }
+}
+
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_TUNES_H_
