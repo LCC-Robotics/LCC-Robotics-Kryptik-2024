@@ -5,7 +5,8 @@
 
 #include "const.h"
 
-void drivetrain_setup()
+namespace DriveTrain {
+void setup()
 {
     CrcLib::InitializePwmOutput(FL_DRIVE_MOTOR, false);
     CrcLib::InitializePwmOutput(BL_DRIVE_MOTOR, false);
@@ -13,7 +14,7 @@ void drivetrain_setup()
     CrcLib::InitializePwmOutput(FR_DRIVE_MOTOR, true);
 }
 
-void drivetrain_die()
+void die()
 {
     CrcLib::SetPwmOutput(FL_DRIVE_MOTOR, 0);
     CrcLib::SetPwmOutput(BL_DRIVE_MOTOR, 0);
@@ -21,7 +22,7 @@ void drivetrain_die()
     CrcLib::SetPwmOutput(FR_DRIVE_MOTOR, 0);
 }
 
-void drivetrain_update()
+void update(bool ticked)
 {
     int8_t forward_val = CrcLib::ReadAnalogChannel(FORWARD_CHANNEL);
     int8_t yaw_val = CrcLib::ReadAnalogChannel(YAW_CHANNEL);
@@ -42,6 +43,7 @@ void drivetrain_update()
         forward_val, yaw_val, strafe_val,
         FL_DRIVE_MOTOR, BL_DRIVE_MOTOR,
         BR_DRIVE_MOTOR, FR_DRIVE_MOTOR);
+}
 }
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_DRIVETRAIN_H_

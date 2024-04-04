@@ -6,13 +6,6 @@
 using PIN = uint8_t;
 
 // ============================
-// CONST:
-// ============================
-
-constexpr int PRECISION_PERCENT = 50;
-constexpr int TICK_TIME = 1;
-
-// ============================
 // PINS:
 // ============================
 
@@ -30,12 +23,12 @@ constexpr PIN FW_MOTOR_BOT = CRC_PWM_6;
 constexpr PIN PICKUP_MOTOR = CRC_PWM_7;
 
 // MULTIPLIER
-constexpr PIN MULTI_ELEV_MOTOR = CRC_PWM_8;
+constexpr PIN ELEV_MOTOR = CRC_PWM_8;
 constexpr PIN MULTI_PLACER_MOTOR = CRC_PWM_9;
 constexpr PIN MULTI_GUIDE_MOTOR = CRC_PWM_10;
 
-constexpr PIN MULTI_ELEV_ENCO_A = CRC_ENCO_A;
-constexpr PIN MULTI_ELEV_ENCO_B = CRC_ENCO_B;
+constexpr PIN ELEV_ENCO_A = CRC_ENCO_A;
+constexpr PIN ELEV_ENCO_B = CRC_ENCO_B;
 
 // SORTING
 constexpr PIN SORT_DOOR_MOTOR = CRC_PWM_11;
@@ -60,8 +53,10 @@ constexpr BUTTON PICKUP_UP_BUTTON = BUTTON::COLORS_LEFT;
 constexpr BUTTON PICKUP_DOWN_BUTTON = BUTTON::COLORS_DOWN;
 
 // MULTIPLIER
-constexpr BUTTON MULTI_ELEV_UP_BUTTON = BUTTON::ARROW_UP;
-constexpr BUTTON MULTI_ELEV_DOWN_BUTTON = BUTTON::ARROW_DOWN;
+constexpr ANALOG ELEV_MANUAL_CHANNEL = ANALOG::JOYSTICK2_Y;
+constexpr BUTTON ELEV_NEXT_BUTTON = BUTTON::ARROW_UP;
+constexpr BUTTON ELEV_PREV_BUTTON = BUTTON::ARROW_DOWN;
+
 constexpr BUTTON MULTI_DEPLOY_BUTTON = BUTTON::ARROW_LEFT;
 constexpr BUTTON MULTI_RETRACT_BUTTON = BUTTON::ARROW_RIGHT;
 

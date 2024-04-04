@@ -6,17 +6,22 @@
 #include "const.h"
 
 // TODO: Sorter
-
-void sorter_setup() {
+namespace Sorter {
+void setup()
+{
     CrcLib::InitializePwmOutput(SORT_DOOR_MOTOR, false);
     CrcLib::InitializePwmOutput(SORT_DIVERT_MOTOR, false);
 }
 
-void sorter_die() {
+void die()
+{
     CrcLib::SetPwmOutput(SORT_DOOR_MOTOR, 0);
     CrcLib::SetPwmOutput(SORT_DIVERT_MOTOR, 0);
 }
 
-void sorter_update() {}
+void update(bool ticked)
+{
+}
+}
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_SORTER_H_

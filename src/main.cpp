@@ -3,22 +3,29 @@
 // CrcLib Reference:
 // https://robocrc.atlassian.net/wiki/spaces/AR/pages/403767325/CrcLib+Functions+-+An+overview
 
-#include "pickup.h"
+#include "clock.h"
 #include "drivetrain.h"
+#include "elev.h"
 #include "flywheel.h"
-#include "multiplier.h"
+#include "multi.h"
+#include "pickup.h"
 #include "sorter.h"
 #include "tunes.h"
+
+constexpr long TICK_SPEED = 1;
+CrcLib::Timer global_clock;
 
 void setup()
 {
     CrcLib::Initialize();
+    global_clock.Start(TICK_SPEED);
 
-    drivetrain_setup();
+    DriveTrain::setup();
+    elev_setup();
+    flywheel_setup();
     multi_setup();
     sorter_setup();
     pickup_setup();
-    flywheel_setup();
 
 #ifdef DEBUG // only start serial if in debug mode (serial can affect performance)
     Serial.begin(BAUD); // macro defined in platformio.ini
@@ -27,10 +34,11 @@ void setup()
 
 void die()
 {
-    drivetrain_die();
+    DriveTrain::die();
+    elev_die();
+    flywheel_die();
     multi_die();
     pickup_die();
-    flywheel_die();
     sorter_die();
 }
 
@@ -41,10 +49,16 @@ void loop()
     if (!CrcLib::IsCommValid() || CrcLib::ReadDigitalChannel(DIE_BUTTON)) {
         return die();
     }
+    
+    bool ticked = global_clock.IsFinished();
+    if (ticked) {
+        global_clock.Next();
+    }
 
-    drivetrain_update();
-    multi_update();
+    DriveTrain::update(ticked);
+    elev_update();
     flywheel_update();
+    multi_update();
     sorter_update();
     pickup_update();
     tunes_update();

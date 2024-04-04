@@ -1,6 +1,7 @@
 #ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_UTILS_H_
 #define LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_UTILS_H_
 
+#include <Arduino.h>
 #include <float.h>
 
 namespace utils {
@@ -24,9 +25,27 @@ constexpr inline T map(T raw, T in_min, T in_max, T out_min, T out_max)
 }
 
 template <class T>
-constexpr inline T threshold(T raw, T thresh)
+constexpr inline T limit_range(T raw, T min, T max)
+{
+    if (raw < min) {
+        return min;
+    } else if (raw > max) {
+        return max;
+    } else {
+        return raw;
+    }
+}
+
+template <class T>
+constexpr inline T thresh(T raw, T thresh)
 {
     return raw > thresh ? raw : 0;
+}
+
+template <class T>
+constexpr inline T pm_thresh(T raw, T thresh)
+{
+    return abs(raw) > thresh ? raw : 0;
 }
 
 }

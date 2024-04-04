@@ -7,6 +7,7 @@
 #include "const.h"
 #include "helpers.h"
 
+namespace FlyWheel {
 // TODO: Find optimal values for flywheel
 // TODO: Implement feeding system
 enum FlywheelState : int8_t {
@@ -17,34 +18,37 @@ enum FlywheelState : int8_t {
 
 etl::debounce<20> close_button_debounce;
 etl::debounce<20> far_button_debounce;
-CrcLib::Timer fw_timer;
 
-void flywheel_setup()
+void setup()
 {
     CrcLib::InitializePwmOutput(FW_MOTOR_TOP, false);
     CrcLib::InitializePwmOutput(FW_MOTOR_BOT, true);
-
-    fw_timer.Start(TICK_TIME);
 }
 
-void flywheel_die()
+void die()
 {
     CrcLib::SetPwmOutput(FW_MOTOR_TOP, 0);
     CrcLib::SetPwmOutput(FW_MOTOR_BOT, 0);
 }
 
-void flywheel_update()
+void update(bool ticked)
 {
     int8_t flywheel_state = helpers::convert_analog(CrcLib::ReadAnalogChannel(FW_MANUAL_CHANNEL));
 
-    if (CrcLib::ReadDigitalChannel(FW_FAR_BUTTON)) {
-        flywheel_state = FW_FAR;
-    } else if (CrcLib::ReadDigitalChannel(FW_CLOSE_BUTTON)) {
-        flywheel_state = FW_CLOSE;
+    if (ticked) {
+        close_button_debounce.add(CrcLib::ReadDigitalChannel(FW_CLOSE_BUTTON));
+        far_button_debounce.add(CrcLib::ReadDigitalChannel(FW_FAR_BUTTON));
+    }
+
+    if (close_button_debounce.is_set()) {
+        flywheel_state = (flywheel_state == FW_CLOSE ? FW_OFF : FW_CLOSE); // toggle
+    } else if (far_button_debounce.is_set()) {
+        flywheel_state = (flywheel_state == FW_FAR ? FW_OFF : FW_FAR); // toggle
     }
 
     CrcLib::SetPwmOutput(FW_MOTOR_TOP, flywheel_state);
     CrcLib::SetPwmOutput(FW_MOTOR_BOT, flywheel_state);
+}
 }
 
 #endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_FLYWHEEL_H_
