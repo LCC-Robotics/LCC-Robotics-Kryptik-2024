@@ -1,5 +1,4 @@
-#ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_FLYWHEEL_H_
-#define LCC_ROBOTICS_KRYPTIK_2024_SRC_FLYWHEEL_H_
+#pragma once
 
 #include <CrcLib.h>
 #include <etl/debounce.h>
@@ -16,9 +15,6 @@ enum FlywheelState : int8_t {
     FW_FAR = 120
 };
 
-etl::debounce<20> close_button_debounce;
-etl::debounce<20> far_button_debounce;
-
 void setup()
 {
     CrcLib::InitializePwmOutput(FW_MOTOR_TOP, false);
@@ -33,6 +29,11 @@ void die()
 
 void update(bool ticked)
 {
+    static etl::debounce<20> close_button_debounce;
+    static etl::debounce<20> far_button_debounce;
+
+    // =======
+
     int8_t flywheel_state = helpers::convert_analog(CrcLib::ReadAnalogChannel(FW_MANUAL_CHANNEL));
 
     if (ticked) {
@@ -51,4 +52,3 @@ void update(bool ticked)
 }
 }
 
-#endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_FLYWHEEL_H_

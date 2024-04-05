@@ -1,5 +1,4 @@
-#ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_UTILS_H_
-#define LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_UTILS_H_
+#pragma once
 
 #include <Arduino.h>
 #include <float.h>
@@ -50,4 +49,3 @@ constexpr inline T pm_thresh(T raw, T thresh)
 
 }
 
-#endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_UTILS_H_

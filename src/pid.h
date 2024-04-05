@@ -1,5 +1,4 @@
-#ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_PID_H_
-#define LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_PID_H_
+#pragma once
 
 #include <CrcLib.h>
 
@@ -67,4 +66,3 @@ private:
     T _output = 0;
 };
 
-#endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_HELPERS_PID_H_

@@ -1,5 +1,4 @@
-#ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_PICKUP_H_
-#define LCC_ROBOTICS_KRYPTIK_2024_SRC_PICKUP_H_
+#pragma once
 
 #include <CrcLib.h>
 
@@ -31,4 +30,3 @@ void update(bool ticked)
 }
 }
 
-#endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_pickup_H_

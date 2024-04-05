@@ -1,5 +1,4 @@
-#ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_PLACER_H_
-#define LCC_ROBOTICS_KRYPTIK_2024_SRC_PLACER_H_
+#pragma once
 
 #include <CrcLib.h>
 
@@ -39,4 +38,3 @@ void update(bool ticked)
 }
 }
 
-#endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_PLACER_H_

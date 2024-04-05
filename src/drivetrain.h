@@ -1,5 +1,4 @@
-#ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_DRIVETRAIN_H_
-#define LCC_ROBOTICS_KRYPTIK_2024_SRC_DRIVETRAIN_H_
+#pragma once
 
 #include <CrcLib.h>
 
@@ -45,5 +44,3 @@ void update(bool ticked)
         BR_DRIVE_MOTOR, FR_DRIVE_MOTOR);
 }
 }
-
-#endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_DRIVETRAIN_H_

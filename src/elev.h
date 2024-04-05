@@ -1,5 +1,4 @@
-#ifndef LCC_ROBOTICS_KRYPTIK_2024_SRC_ELEV_H_
-#define LCC_ROBOTICS_KRYPTIK_2024_SRC_ELEV_H_
+#pragma once
 
 #include <CrcLib.h>
 #define ENCODER_OPTIMIZE_INTERRUPTS // optimize encoder overhead
@@ -27,19 +26,6 @@ constexpr etl::array<long, 3> POSITIONS {
 };
 
 constexpr long PRECISION = 30;
-
-// ================
-
-// TODO: find good pid values
-
-Encoder encoder { ELEV_ENCO_A, ELEV_ENCO_B };
-PID<long, PRECISION> pid { 1.0, 0.0, 0.0 };
-
-etl::debounce<20> next_button_debounce;
-etl::debounce<20> prev_button_debounce;
-
-ElevMode elev_mode = ElevMode::AUTO;
-int elev_auto_index = 0;
 
 // ================
 // HELPERS
@@ -75,63 +61,77 @@ void die() { CrcLib::SetPwmOutput(ELEV_MOTOR, 0); }
 
 void update(bool ticked)
 {
-    long pos = encoder.read();
+    // TODO: find good pid values
 
-    if (ticked) {
-        next_button_debounce.add(CrcLib::ReadDigitalChannel(ELEV_NEXT_BUTTON));
-        prev_button_debounce.add(CrcLib::ReadDigitalChannel(ELEV_PREV_BUTTON));
-    }
+    static Encoder encoder { ELEV_ENCO_A, ELEV_ENCO_B };
+    static PID<long, PRECISION> pid { 1.0, 0.0, 0.0 };
+
+    static etl::debounce<20> next_button_debounce;
+    static etl::debounce<20> prev_button_debounce;
+
+    static ElevMode mode = ElevMode::AUTO;
+    static int level_index = 0;
+
+    // ==========
+
+    long pos = encoder.read();
 
     // MANUAL MODE
     auto mult_val = utils::pm_thresh<int8_t>(
         CrcLib::ReadAnalogChannel(ELEV_MANUAL_CHANNEL), 20); // pm_thresh adds threshold for positive and negative direction
 
-    if (mult_val != 0) {
-        elev_mode = ElevMode::MANUAL;
+    if (mult_val != 0) { // update state to manual
+        mode = ElevMode::MANUAL;
     }
+
+    // =============
 
     // AUTO MODE
+    if (ticked) { // update debounced buttons for auto mode
+        next_button_debounce.add(CrcLib::ReadDigitalChannel(ELEV_NEXT_BUTTON));
+        prev_button_debounce.add(CrcLib::ReadDigitalChannel(ELEV_PREV_BUTTON));
+    }
 
     if (next_button_debounce.is_set()) { // next level
-        if (elev_mode == ElevMode::MANUAL) { // find
-            elev_mode = ElevMode::AUTO;
+        if (mode == ElevMode::MANUAL) { // find
+            mode = ElevMode::AUTO;
 
-            elev_auto_index = find_next_level(pos);
-            pid.Override(POSITIONS[elev_auto_index]); // sets errors to zero, reset
+            level_index = find_next_level(pos);
+            pid.Override(POSITIONS[level_index]); // sets errors to zero, reset
         } else {
-            elev_auto_index++;
+            level_index++;
         }
 
-        if (elev_auto_index >= POSITIONS.size()) {
-            elev_auto_index = POSITIONS.size() - 1;
-        }
+        if (level_index >= POSITIONS.size()) {
+            level_index = POSITIONS.size() - 1;
+        } // snap back if go over
 
-        pid.SetTarget(elev_auto_index);
+        pid.SetTarget(POSITIONS[level_index]);
 
     } else if (prev_button_debounce.is_set()) { // prev level
-        if (elev_mode == ElevMode::MANUAL) { // find 
-            elev_mode = ElevMode::AUTO;
+        if (mode == ElevMode::MANUAL) { // find
+            mode = ElevMode::AUTO;
 
-            elev_auto_index = find_prev_level(pos);
-            pid.Override(POSITIONS[elev_auto_index]); // sets errors to zero, reset
+            level_index = find_prev_level(pos);
+            pid.Override(POSITIONS[level_index]); // sets errors to zero, reset
         } else {
-            elev_auto_index--;
+            level_index--;
         }
 
-        if (elev_auto_index < 0) {
-            elev_auto_index = 0;
-        }
+        if (level_index < 0) {
+            level_index = 0;
+        } // snap back if go below
 
-        pid.SetTarget(elev_auto_index);
+        pid.SetTarget(POSITIONS[level_index]);
     }
 
-    if (elev_mode == ElevMode::AUTO) { // read pid 
-        mult_val = (int8_t)utils::limit_range<long>(
-            pid.Update(pos), INT8_MIN, INT8_MAX); // takes raw output from pid and limits range
+    if (mode == ElevMode::AUTO) { // read pid
+        long raw_output = pid.Update(pos);
+        mult_val = (int8_t)(utils::limit_range<long>(raw_output, INT8_MIN, INT8_MAX)); // takes raw output from pid and limits range
     }
 
-    CrcLib::SetPwmOutput(ELEV_MOTOR, mult_val);
-}
-}
+    // =============
 
-#endif // LCC_ROBOTICS_KRYPTIK_2024_SRC_ELEV_H_
+    CrcLib::SetPwmOutput(ELEV_MOTOR, mult_val); // write value to motor
+}
+}
