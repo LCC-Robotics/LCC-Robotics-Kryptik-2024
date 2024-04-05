@@ -50,6 +50,8 @@ public:
         return _output;
     }
 
+    inline T get_output() const {return _output;}
+
 private:
     unsigned long last_poll;
 
