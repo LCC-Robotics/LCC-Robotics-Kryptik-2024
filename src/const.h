@@ -2,36 +2,36 @@
 
 #include <CrcLib.h>
 
-using PIN = uint8_t;
-
 // ============================
 // PINS:
 // ============================
 
-// DRIVETRAIN
-constexpr PIN FL_DRIVE_MOTOR = CRC_PWM_1;
-constexpr PIN BL_DRIVE_MOTOR = CRC_PWM_2;
-constexpr PIN BR_DRIVE_MOTOR = CRC_PWM_3;
-constexpr PIN FR_DRIVE_MOTOR = CRC_PWM_4;
+enum PINS : uint8_t {
+    // DRIVETRAIN
+    FL_DRIVE_MOTOR = CRC_PWM_1,
+    BL_DRIVE_MOTOR = CRC_PWM_2,
+    BR_DRIVE_MOTOR = CRC_PWM_3,
+    FR_DRIVE_MOTOR = CRC_PWM_4,
 
-// FLYWHEEL
-constexpr PIN FW_MOTOR_TOP = CRC_PWM_5;
-constexpr PIN FW_MOTOR_BOT = CRC_PWM_6;
+    // FLYWHEEL
+    FW_MOTOR_TOP = CRC_PWM_5,
+    FW_MOTOR_BOT = CRC_PWM_6,
 
-// PICKUP
-constexpr PIN PICKUP_MOTOR = CRC_PWM_7;
+    // PICKUP
+    PICKUP_MOTOR = CRC_PWM_7,
 
-// MULTIPLIER
-constexpr PIN ELEV_MOTOR = CRC_PWM_8;
-constexpr PIN MULTI_PLACER_MOTOR = CRC_PWM_9;
-constexpr PIN MULTI_GUIDE_MOTOR = CRC_PWM_10;
+    // MULTIPLIER
+    ELEV_MOTOR = CRC_PWM_8,
+    MULTI_PLACER_MOTOR = CRC_PWM_9,
+    MULTI_GUIDE_MOTOR = CRC_PWM_10,
 
-constexpr PIN ELEV_ENCO_A = CRC_ENCO_A;
-constexpr PIN ELEV_ENCO_B = CRC_ENCO_B;
+    ELEV_ENCO_A = CRC_ENCO_A,
+    ELEV_ENCO_B = CRC_ENCO_B,
 
-// SORTING
-constexpr PIN SORT_DOOR_MOTOR = CRC_PWM_11;
-constexpr PIN SORT_DIVERT_MOTOR = CRC_PWM_12;
+    // SORTING
+    SORT_DOOR_MOTOR = CRC_PWM_11,
+    SORT_DIVERT_MOTOR = CRC_PWM_12,
+};
 
 // ============================
 // INPUTS:
@@ -74,4 +74,3 @@ constexpr BUTTON FW_CLOSE_BUTTON = BUTTON::R1;
 
 constexpr ANALOG FW_FEED_CHANNEL = ANALOG::GACHETTE_L;
 constexpr ANALOG FW_MANUAL_CHANNEL = ANALOG::GACHETTE_R;
-

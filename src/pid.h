@@ -39,11 +39,11 @@ public:
 
         if (!utils::almost_equal(_target_state, pos, EPSILON)) {
             _error = _target_state - pos;
-            _derror = (_error - _last_error) / (T)delta;
-            _ierror += _error * (T)delta;
+            _derror = (_error - _last_error) / (float)delta;
+            _ierror += _error * (float)delta;
 
             // PID Function
-            _output = _kp * _error + _kd * _derror + _ki * _ierror;
+            _output = (T)(_kp * _error + _kd * _derror + _ki * _ierror);
             _last_error = _error;
         }
 
@@ -53,14 +53,14 @@ public:
 private:
     unsigned long last_poll;
 
-    const T _kp;
-    const T _kd;
-    const T _ki;
+    const float _kp;
+    const float _kd;
+    const float _ki;
 
-    T _last_error = 0;
-    T _error = 0;
-    T _derror = 0;
-    T _ierror = 0;
+    float _last_error = 0;
+    float _error = 0;
+    float _derror = 0;
+    float _ierror = 0;
 
     T _target_state = 0;
     T _output = 0;
