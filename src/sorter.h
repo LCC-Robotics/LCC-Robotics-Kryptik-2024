@@ -6,6 +6,13 @@
 
 // TODO: Sorter
 namespace Sorter {
+
+// TODO: Find values for door 
+enum DoorState: long {
+    OPEN = 1200,
+    CLOSED = 1700
+};
+
 void setup()
 {
     CrcLib::InitializePwmOutput(SORT_DOOR_MOTOR, false);

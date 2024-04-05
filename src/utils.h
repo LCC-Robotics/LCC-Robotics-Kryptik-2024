@@ -11,7 +11,7 @@ struct Range {
     T max;
 };
 
-constexpr inline bool almost_equal(double a, double b, double EPSILON = DBL_EPSILON)
+constexpr inline bool almost_equal(float a, float b, float EPSILON = FLT_EPSILON)
 {
     auto diff = a - b;
     return (diff < EPSILON) && (diff > -EPSILON);
