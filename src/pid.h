@@ -4,7 +4,6 @@
 
 #include "utils.h"
 
-
 template <class T, T EPSILON>
 class PID {
     using Timer = CrcLib::Timer;
@@ -50,7 +49,7 @@ public:
         return _output;
     }
 
-    inline T get_output() const {return _output;}
+    inline T get_output() const { return _output; }
 
 private:
     unsigned long last_poll;
@@ -67,4 +66,3 @@ private:
     T _target_state = 0;
     T _output = 0;
 };
-
