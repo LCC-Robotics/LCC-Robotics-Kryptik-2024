@@ -17,6 +17,8 @@ enum PINS : uint8_t {
     FW_MOTOR_TOP = CRC_PWM_5,
     FW_MOTOR_BOT = CRC_PWM_6,
 
+    FW_FEEDING_MOTOR = CRC_DIG_1,
+
     // PICKUP
     PICKUP_MOTOR = CRC_PWM_7,
 

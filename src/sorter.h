@@ -13,6 +13,8 @@ enum DoorState: long {
     CLOSED = 1700
 };
 
+CrcLib::Timer jank_timer;
+
 void setup()
 {
     CrcLib::InitializePwmOutput(SORT_DOOR_MOTOR, false);
