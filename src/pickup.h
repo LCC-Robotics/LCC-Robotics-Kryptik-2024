@@ -13,8 +13,8 @@ enum PickupState : int8_t {
     PU_OFF = 0
 };
 
-etl::debounce<100> foward_debounce;
-etl::debounce<100> bakward_debounce;
+etl::debounce<20> foward_debounce;
+etl::debounce<20> bakward_debounce;
 
 int8_t pickup_state = PU_OFF;
 
@@ -26,10 +26,8 @@ void CustomUpdate(bool ticked)
 {
     CrcLib::Update();
 
-    if (ticked) {
-        foward_debounce.add(CrcLib::ReadDigitalChannel(PICKUP_UP_BUTTON));
-        bakward_debounce.add(CrcLib::ReadDigitalChannel(PICKUP_DOWN_BUTTON));
-    }
+    foward_debounce.add(CrcLib::ReadDigitalChannel(PICKUP_UP_BUTTON));
+    bakward_debounce.add(CrcLib::ReadDigitalChannel(PICKUP_DOWN_BUTTON));
 
     if (foward_debounce.is_set()) {
         pickup_state = (pickup_state == PU_UP ? PU_OFF : PU_UP); // toggle
