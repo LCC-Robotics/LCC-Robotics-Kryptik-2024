@@ -1,6 +1,7 @@
 #pragma once
 
 #include <CrcLib.h>
+#include <etl/debounce.h>
 
 #include "const.h"
 
