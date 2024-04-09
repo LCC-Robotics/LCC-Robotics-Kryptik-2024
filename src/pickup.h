@@ -29,9 +29,9 @@ void CustomUpdate(bool ticked)
     foward_debounce.add(CrcLib::ReadDigitalChannel(PICKUP_UP_BUTTON));
     bakward_debounce.add(CrcLib::ReadDigitalChannel(PICKUP_DOWN_BUTTON));
 
-    if (foward_debounce.has_changed()) {
+    if (foward_debounce.has_changed() && foward_debounce.is_set()) {
         pickup_state = (pickup_state == PU_UP ? PU_OFF : PU_UP); // toggle
-    } else if (bakward_debounce.has_changed()) {
+    } else if (bakward_debounce.has_changed() && bakward_debounce.is_set()) {
         pickup_state = (pickup_state == PU_DOWN ? PU_OFF : PU_DOWN); // toggle
     }
 
