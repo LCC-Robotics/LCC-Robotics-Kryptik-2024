@@ -12,7 +12,7 @@ const Note VICTORY_TUNE[] {
     { 150, NOTE_SILENCE },
     { 150, NOTE_D5 },
     { 600, NOTE_F5 },
-    Note::END()
+    Note::END
 };
 
 const Note NON_NOBIS_SOLUM[] {
@@ -29,10 +29,10 @@ const Note NON_NOBIS_SOLUM[] {
     { 250, NOTE_C5 },
     { 75, NOTE_AS4 },
     { 450, NOTE_AS4 },
-    Note::END()
+    Note::END
 };
 
-void update(bool ticked)
+void CustomUpdate(bool ticked)
 {
     static bool flop;
 

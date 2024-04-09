@@ -11,7 +11,7 @@ enum PlacerState : int8_t {
     PLA_DEPLOY = 90,
 };
 
-void setup()
+void CustomSetup()
 {
     CrcLib::InitializePwmOutput(MULTI_PLACER_MOTOR, false);
     CrcLib::InitializePwmOutput(MULTI_GUIDE_MOTOR, false);
@@ -19,12 +19,16 @@ void setup()
 
 void die()
 {
+    CrcLib::Update();
+    
     CrcLib::SetPwmOutput(MULTI_PLACER_MOTOR, 0);
     CrcLib::SetPwmOutput(MULTI_GUIDE_MOTOR, 0);
 }
 
-void update(bool ticked)
+void CustomUpdate(bool ticked)
 {
+    CrcLib::Update();
+    
     int8_t placer_val = PLA_OFF;
 
     if (CrcLib::ReadDigitalChannel(MULTI_DEPLOY_BUTTON)) {

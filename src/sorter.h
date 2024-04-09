@@ -8,27 +8,69 @@
 namespace Sorter {
 
 // TODO: Find values for door 
-enum DoorState: long {
-    OPEN = 1200,
-    CLOSED = 1700
+enum DoorState {
+    OPEN = 127,
+    CLOSED = -128,
+    DOOR_OFF = 0
+};
+
+enum DivertState {
+    MULTI = 56,
+    FLY = 127
 };
 
 CrcLib::Timer jank_timer;
 
-void setup()
+void CustomSetup()
 {
     CrcLib::InitializePwmOutput(SORT_DOOR_MOTOR, false);
     CrcLib::InitializePwmOutput(SORT_DIVERT_MOTOR, false);
+
+    jank_timer.Start(50);
 }
 
 void die()
 {
+    CrcLib::Update();
+    
     CrcLib::SetPwmOutput(SORT_DOOR_MOTOR, 0);
-    CrcLib::SetPwmOutput(SORT_DIVERT_MOTOR, 0);
 }
 
-void update(bool ticked)
+void CustomUpdate(bool ticked)
 {
+    CrcLib::Update();
+    
+    int8_t divert_val = FLY;
+    int8_t door_val = DOOR_OFF;
+
+    if (CrcLib::ReadDigitalChannel(SORT_DIVERT_BUTTON)){
+        divert_val = MULTI;
+    }
+
+
+    if (CrcLib::ReadDigitalChannel(SORT_DOOR_BUTTON)){
+       jank_timer.Next();
+        
+        if (!jank_timer.IsFinished()){
+            door_val = OPEN; }
+        else {
+            door_val = DOOR_OFF; }
+    }
+    else if (!CrcLib::ReadDigitalChannel(SORT_DOOR_BUTTON)) {
+        jank_timer.Next();
+
+        if (!jank_timer.IsFinished() ){
+            door_val = CLOSED;
+        }
+        else {
+            door_val = DOOR_OFF;
+        }
+    }
+
+    CrcLib::SetPwmOutput(SORT_DIVERT_MOTOR, divert_val);
+    CrcLib::SetPwmOutput(SORT_DOOR_MOTOR, door_val);
+
+    Serial.write(door_val);
 }
 }
 

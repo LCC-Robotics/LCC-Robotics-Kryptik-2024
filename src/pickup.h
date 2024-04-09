@@ -12,21 +12,30 @@ enum PickupState : int8_t {
     PU_OFF = 0
 };
 
-void setup() { CrcLib::InitializePwmOutput(PICKUP_MOTOR, false); }
+etl::debounce<100> foward_debounce;
+etl::debounce<100> bakward_debounce;
+
+int8_t pickup_state = PU_OFF;
+
+void CustomSetup() { CrcLib::InitializePwmOutput(PICKUP_MOTOR, true); }
 
 void die() { CrcLib::SetPwmOutput(PICKUP_MOTOR, 0); }
 
-void update(bool ticked)
+void CustomUpdate(bool ticked)
 {
-    int8_t pickup_state = PU_OFF;
+    CrcLib::Update();
 
-    if (CrcLib::ReadDigitalChannel(PICKUP_UP_BUTTON)) {
-        pickup_state = PU_UP;
-    } else if (CrcLib::ReadDigitalChannel(PICKUP_DOWN_BUTTON)) {
-        pickup_state = PU_DOWN;
+    if (ticked) {
+        foward_debounce.add(CrcLib::ReadDigitalChannel(PICKUP_UP_BUTTON));
+        bakward_debounce.add(CrcLib::ReadDigitalChannel(PICKUP_DOWN_BUTTON));
+    }
+
+    if (foward_debounce.is_set()) {
+        pickup_state = (pickup_state == PU_UP ? PU_OFF : PU_UP); // toggle
+    } else if (bakward_debounce.is_set()) {
+        pickup_state = (pickup_state == PU_DOWN ? PU_OFF : PU_DOWN); // toggle
     }
 
     CrcLib::SetPwmOutput(PICKUP_MOTOR, pickup_state);
 }
 }
-

@@ -18,20 +18,25 @@ enum FlywheelState : int8_t {
 etl::debounce<20> close_button_debounce;
 etl::debounce<20> far_button_debounce;
 
-void setup()
+void CustomSetup()
 {
     CrcLib::InitializePwmOutput(FW_MOTOR_TOP, false);
     CrcLib::InitializePwmOutput(FW_MOTOR_BOT, true);
+
+    CrcLib::SetDigitalPinMode(FW_FEEDING_MOTOR, OUTPUT);
 }
 
 void die()
 {
+    CrcLib::Update();
+    
     CrcLib::SetPwmOutput(FW_MOTOR_TOP, 0);
     CrcLib::SetPwmOutput(FW_MOTOR_BOT, 0);
 }
 
-void update(bool ticked)
+void CustomUpdate(bool ticked)
 {
+    CrcLib::Update();
 
     int8_t flywheel_state = helpers::convert_analog(CrcLib::ReadAnalogChannel(FW_MANUAL_CHANNEL));
 
@@ -48,5 +53,7 @@ void update(bool ticked)
 
     CrcLib::SetPwmOutput(FW_MOTOR_TOP, flywheel_state);
     CrcLib::SetPwmOutput(FW_MOTOR_BOT, flywheel_state);
+
+    CrcLib::SetDigitalOutput(FW_FEEDING_MOTOR, HIGH);
 }
 }

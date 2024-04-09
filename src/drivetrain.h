@@ -3,9 +3,10 @@
 #include <CrcLib.h>
 
 #include "const.h"
+#include "utils.h"
 
 namespace DriveTrain {
-void setup()
+void CustomSetup()
 {
     CrcLib::InitializePwmOutput(FL_DRIVE_MOTOR, false);
     CrcLib::InitializePwmOutput(BL_DRIVE_MOTOR, false);
@@ -15,17 +16,21 @@ void setup()
 
 void die()
 {
+    CrcLib::Update();
+    
     CrcLib::SetPwmOutput(FL_DRIVE_MOTOR, 0);
     CrcLib::SetPwmOutput(BL_DRIVE_MOTOR, 0);
     CrcLib::SetPwmOutput(BR_DRIVE_MOTOR, 0);
     CrcLib::SetPwmOutput(FR_DRIVE_MOTOR, 0);
 }
 
-void update(bool ticked)
+void CustomUpdate(bool ticked)
 {
-    int8_t forward_val = CrcLib::ReadAnalogChannel(FORWARD_CHANNEL);
-    int8_t yaw_val = CrcLib::ReadAnalogChannel(YAW_CHANNEL);
-    int8_t strafe_val = CrcLib::ReadAnalogChannel(STRAFE_CHANNEL);
+    CrcLib::Update();
+    
+    auto forward_val = utils::pm_thresh<int8_t>(CrcLib::ReadAnalogChannel(FORWARD_CHANNEL), 4);
+    auto yaw_val = utils::pm_thresh<int8_t>(CrcLib::ReadAnalogChannel(YAW_CHANNEL), 4);
+    auto strafe_val = utils::pm_thresh<int8_t>(CrcLib::ReadAnalogChannel(STRAFE_CHANNEL), 4);
 
     // Precision Control:
     if (CrcLib::ReadDigitalChannel(PRECISION_CONTROL_L)) {
