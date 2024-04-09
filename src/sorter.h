@@ -14,9 +14,9 @@ enum DoorState {
     DOOR_OFF = 0
 };
 
-enum DivertState {
-    MULTI = 56,
-    FLY = 127
+enum DivertState { //these values are good
+    MULTI = 100,
+    FLY = -128,
 };
 
 CrcLib::Timer jank_timer;
