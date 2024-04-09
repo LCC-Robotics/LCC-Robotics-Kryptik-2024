@@ -43,9 +43,9 @@ void CustomUpdate(bool ticked)
     close_button_debounce.add(CrcLib::ReadDigitalChannel(FW_CLOSE_BUTTON));
     far_button_debounce.add(CrcLib::ReadDigitalChannel(FW_FAR_BUTTON));
 
-    if (close_button_debounce.is_set()) {
+    if (close_button_debounce.has_changed()) {
         flywheel_state = (flywheel_state == FW_CLOSE ? FW_OFF : FW_CLOSE); // toggle
-    } else if (far_button_debounce.is_set()) {
+    } else if (far_button_debounce.has_changed()) {
         flywheel_state = (flywheel_state == FW_FAR ? FW_OFF : FW_FAR); // toggle
     }
 
