@@ -21,7 +21,7 @@ etl::debounce<20> far_button_debounce;
 void CustomSetup()
 {
     CrcLib::InitializePwmOutput(FW_MOTOR_TOP, false);
-    CrcLib::InitializePwmOutput(FW_MOTOR_BOT, true);
+    CrcLib::InitializePwmOutput(FW_MOTOR_BOT, false);
 
     CrcLib::SetDigitalPinMode(FW_FEEDING_MOTOR, OUTPUT);
 }
@@ -38,15 +38,13 @@ void CustomUpdate(bool ticked)
 {
     CrcLib::Update();
 
-    int8_t flywheel_state = helpers::convert_analog(CrcLib::ReadAnalogChannel(FW_MANUAL_CHANNEL));
+    int8_t flywheel_state = FW_OFF;
 
-    close_button_debounce.add(CrcLib::ReadDigitalChannel(FW_CLOSE_BUTTON));
-    far_button_debounce.add(CrcLib::ReadDigitalChannel(FW_FAR_BUTTON));
-
-    if (close_button_debounce.has_changed() && close_button_debounce.is_set()) {
-        flywheel_state = (flywheel_state == FW_CLOSE ? FW_OFF : FW_CLOSE); // toggle
-    } else if (far_button_debounce.has_changed() && far_button_debounce.is_set()) {
-        flywheel_state = (flywheel_state == FW_FAR ? FW_OFF : FW_FAR); // toggle
+    if (CrcLib::ReadDigitalChannel(FW_FAR_BUTTON)){
+        flywheel_state = FW_FAR;
+    }
+    else if (CrcLib::ReadDigitalChannel(FW_CLOSE_BUTTON)){
+        flywheel_state = FW_CLOSE;
     }
 
     CrcLib::SetPwmOutput(FW_MOTOR_TOP, flywheel_state);

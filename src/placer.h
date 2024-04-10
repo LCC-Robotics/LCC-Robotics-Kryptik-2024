@@ -7,8 +7,8 @@
 namespace Placer {
 enum PlacerState : int8_t {
     PLA_OFF = 0,
-    PLA_RETRACT = -90,
-    PLA_DEPLOY = 90,
+    PLA_RETRACT = -128,
+    PLA_DEPLOY = 127,
 };
 
 void CustomSetup()

@@ -3,7 +3,6 @@
 #include <CrcLib.h>
 
 #include "const.h"
-#include "utils.h"
 
 namespace Elevator {
 
