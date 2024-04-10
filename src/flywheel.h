@@ -1,10 +1,10 @@
 #pragma once
 
 #include <CrcLib.h>
+#include <Servo.h>
 #include <etl/debounce.h>
 
 #include "const.h"
-#include "helpers.h"
 
 namespace Flywheel {
 // TODO: Find optimal values for flywheel
@@ -15,6 +15,8 @@ enum FlywheelState : int8_t {
     FW_FAR = 120
 };
 
+Servo flywheel_feed; 
+
 etl::debounce<20> close_button_debounce;
 etl::debounce<20> far_button_debounce;
 
@@ -23,7 +25,7 @@ void CustomSetup()
     CrcLib::InitializePwmOutput(FW_MOTOR_TOP, false);
     CrcLib::InitializePwmOutput(FW_MOTOR_BOT, false);
 
-    CrcLib::SetDigitalPinMode(FW_FEEDING_MOTOR, OUTPUT);
+    flywheel_feed.attach(FW_FEEDING_MOTOR);
 }
 
 void die()
@@ -34,7 +36,7 @@ void die()
     CrcLib::SetPwmOutput(FW_MOTOR_BOT, 0);
 }
 
-void CustomUpdate(bool ticked)
+void CustomUpdate()
 {
     CrcLib::Update();
 
@@ -50,6 +52,6 @@ void CustomUpdate(bool ticked)
     CrcLib::SetPwmOutput(FW_MOTOR_TOP, flywheel_state);
     CrcLib::SetPwmOutput(FW_MOTOR_BOT, flywheel_state);
 
-    CrcLib::SetDigitalOutput(FW_FEEDING_MOTOR, HIGH);
+    flywheel_feed.write(flywheel_state);
 }
 }

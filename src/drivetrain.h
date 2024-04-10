@@ -24,7 +24,7 @@ void die()
     CrcLib::SetPwmOutput(FR_DRIVE_MOTOR, 0);
 }
 
-void CustomUpdate(bool ticked)
+void CustomUpdate()
 {
     CrcLib::Update();
     

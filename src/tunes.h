@@ -32,7 +32,7 @@ const Note NON_NOBIS_SOLUM[] {
     Note::END
 };
 
-void CustomUpdate(bool ticked)
+void CustomUpdate()
 {
     static bool flop;
 

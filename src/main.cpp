@@ -13,14 +13,9 @@
 
 
 #include "const.h"
-
-constexpr long TICK_SPEED = 1;
-CrcLib::Timer global_clock;
-
 void setup()
 {
     CrcLib::Initialize();
-    global_clock.Start(TICK_SPEED);
     Serial.begin(9600);
 
     DriveTrain::CustomSetup();
@@ -57,19 +52,12 @@ void loop()
         return die();
     }
 
-
-    bool ticked = global_clock.IsFinished();
-    if (ticked) {
-        global_clock.Next();
-    }
-    
-
-    DriveTrain::CustomUpdate(ticked);
-    Elevator::CustomUpdate(ticked);
-    Flywheel::CustomUpdate(ticked);
-    Placer::CustomUpdate(ticked);
-    Sorter::CustomUpdate(ticked);
-    Pickup::CustomUpdate(ticked);
-    Tunes::CustomUpdate(ticked);
+    DriveTrain::CustomUpdate();
+    Elevator::CustomUpdate();
+    Flywheel::CustomUpdate();
+    Placer::CustomUpdate();
+    Sorter::CustomUpdate();
+    Pickup::CustomUpdate();
+    Tunes::CustomUpdate();
 
 }

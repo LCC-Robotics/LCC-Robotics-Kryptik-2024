@@ -13,29 +13,25 @@ enum ElevatorState : int8_t {
 };
 
 void CustomSetup()
-{   
+{
     CrcLib::InitializePwmOutput(ELEV_MOTOR, false);
 }
 
-
 void die() { CrcLib::SetPwmOutput(ELEV_MOTOR, 0); }
 
-
-void CustomUpdate(bool ticked)
+void CustomUpdate()
 {
     CrcLib::Update();
-    
-    if (ticked) { // update debounced buttons each tick
-        int8_t elev_val = ELEV_OFF;
 
-        if (CrcLib::ReadDigitalChannel(ELEV_UP_BUTTON)){
-            elev_val = ELEV_UP;
-        }
-        else if (CrcLib::ReadDigitalChannel(ELEV_DOWN_BUTTON)){
-            elev_val = ELEV_DOWN;
-        }
+    int8_t elev_val = ELEV_OFF;
+
+    if (CrcLib::ReadDigitalChannel(ELEV_UP_BUTTON)) {
+        elev_val = ELEV_UP;
+    } else if (CrcLib::ReadDigitalChannel(ELEV_DOWN_BUTTON)) {
+        elev_val = ELEV_DOWN;
+    }
 
     CrcLib::SetPwmOutput(ELEV_MOTOR, elev_val); // write value to motor
-    }
 }
+
 }

@@ -22,7 +22,7 @@ void CustomSetup() { CrcLib::InitializePwmOutput(PICKUP_MOTOR, true); }
 
 void die() { CrcLib::SetPwmOutput(PICKUP_MOTOR, 0); }
 
-void CustomUpdate(bool ticked)
+void CustomUpdate()
 {
     CrcLib::Update();
 

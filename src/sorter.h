@@ -40,7 +40,7 @@ void die()
     CrcLib::SetPwmOutput(SORT_DOOR_MOTOR, 0);
 }
 
-void CustomUpdate(bool ticked)
+void CustomUpdate()
 {
     CrcLib::Update();
     

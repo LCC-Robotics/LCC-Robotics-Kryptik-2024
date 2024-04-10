@@ -25,7 +25,7 @@ void die()
     CrcLib::SetPwmOutput(MULTI_GUIDE_MOTOR, 0);
 }
 
-void CustomUpdate(bool ticked)
+void CustomUpdate()
 {
     CrcLib::Update();
     
