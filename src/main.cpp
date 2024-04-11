@@ -11,12 +11,11 @@
 #include "sorter.h"
 #include "tunes.h"
 
-
 #include "const.h"
+
 void setup()
 {
     CrcLib::Initialize();
-    Serial.begin(9600);
 
     DriveTrain::CustomSetup();
     Elevator::CustomSetup();

@@ -10,8 +10,8 @@ namespace Sorter {
 
  
 enum DoorState {
-    OPEN = 127,
-    CLOSED = -128,
+    OPEN = 50,
+    CLOSED = 127,
 };
 
 enum DivertState { //these values are to test
@@ -21,23 +21,17 @@ enum DivertState { //these values are to test
 
 etl::debounce<20> door_debounce;
 
-CrcLib::Timer jank_timer;
-CrcLib::Timer debounce_timer;
-
 void CustomSetup()
 {
-    CrcLib::InitializePwmOutput(SORT_DOOR_MOTOR, false);
+    CrcLib::InitializePwmOutput(SORT_DOOR_MOTOR, 500, 2500, false);
     CrcLib::InitializePwmOutput(SORT_DIVERT_MOTOR, false);
-
-    jank_timer.Start(50);
-    debounce_timer.Start(50);
 }
 
 void die()
 {
     CrcLib::Update();
     
-    CrcLib::SetPwmOutput(SORT_DOOR_MOTOR, 0);
+    CrcLib::SetPwmOutput(SORT_DOOR_MOTOR, 127);
 }
 
 void CustomUpdate()
@@ -56,7 +50,6 @@ void CustomUpdate()
         door_val = OPEN;
     }
    
-
     CrcLib::SetPwmOutput(SORT_DIVERT_MOTOR, divert_val);
     CrcLib::SetPwmOutput(SORT_DOOR_MOTOR, door_val);
 

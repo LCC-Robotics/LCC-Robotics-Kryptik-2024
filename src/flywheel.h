@@ -15,7 +15,9 @@ enum FlywheelState : int8_t {
     FW_FAR = 120
 };
 
-Servo flywheel_feed; 
+constexpr int8_t FEED_VAL = 127;
+
+Servo flywheel_feed;
 
 etl::debounce<20> close_button_debounce;
 etl::debounce<20> far_button_debounce;
@@ -42,16 +44,15 @@ void CustomUpdate()
 
     int8_t flywheel_state = FW_OFF;
 
-    if (CrcLib::ReadDigitalChannel(FW_FAR_BUTTON)){
+    if (CrcLib::ReadDigitalChannel(FW_FAR_BUTTON)) {
         flywheel_state = FW_FAR;
-    }
-    else if (CrcLib::ReadDigitalChannel(FW_CLOSE_BUTTON)){
+    } else if (CrcLib::ReadDigitalChannel(FW_CLOSE_BUTTON)) {
         flywheel_state = FW_CLOSE;
     }
 
     CrcLib::SetPwmOutput(FW_MOTOR_TOP, flywheel_state);
     CrcLib::SetPwmOutput(FW_MOTOR_BOT, flywheel_state);
 
-    flywheel_feed.write(flywheel_state);
+    flywheel_feed.write((flywheel_state != FW_OFF) ? FEED_VAL : 0);
 }
 }
