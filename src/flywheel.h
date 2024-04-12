@@ -11,7 +11,7 @@ namespace Flywheel {
 // TODO: Implement feeding system
 enum FlywheelState : int8_t {
     FW_OFF = 0,
-    FW_CLOSE = 90,
+    FW_CLOSE = 60,
     FW_FAR = 120
 };
 

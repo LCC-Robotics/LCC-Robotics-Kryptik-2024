@@ -3,14 +3,9 @@
 #include <CrcLib.h>
 
 #include "const.h"
+#include "helpers.h"
 
 namespace Elevator {
-
-enum ElevatorState : int8_t {
-    ELEV_UP = 100,
-    ELEV_DOWN = -100,
-    ELEV_OFF = 0,
-};
 
 void CustomSetup()
 {
@@ -23,15 +18,15 @@ void CustomUpdate()
 {
     CrcLib::Update();
 
-    int8_t elev_val = ELEV_OFF;
+    int8_t elev = helpers::convert_analog(CrcLib::ReadAnalogChannel(ELEV_UP_CHANNEL));
 
-    if (CrcLib::ReadDigitalChannel(ELEV_UP_BUTTON)) {
-        elev_val = ELEV_UP;
-    } else if (CrcLib::ReadDigitalChannel(ELEV_DOWN_BUTTON)) {
-        elev_val = ELEV_DOWN;
+    if (!elev) {
+        elev = -helpers::convert_analog(CrcLib::ReadAnalogChannel(ELEV_DOWN_CHANNEL));
+    }
+    if (!elev) {
+        elev = 6;
     }
 
-    CrcLib::SetPwmOutput(ELEV_MOTOR, elev_val); // write value to motor
+    CrcLib::SetPwmOutput(ELEV_MOTOR, elev); // write value to motor
 }
-
 }

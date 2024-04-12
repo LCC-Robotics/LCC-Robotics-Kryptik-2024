@@ -16,19 +16,19 @@ const Note VICTORY_TUNE[] {
 };
 
 const Note NON_NOBIS_SOLUM[] {
-    { 125, NOTE_F4 },
-    { 250, NOTE_AS4 },
-    { 125, NOTE_A4 },
-    { 125, NOTE_AS4 },
-    { 250, NOTE_G4 },
-    { 125, NOTE_F4 },
-    { 125, NOTE_AS4 },
-    { 125, NOTE_C5 },
-    { 75, NOTE_D5 },
-    { 75, NOTE_DS5 },
-    { 250, NOTE_C5 },
-    { 75, NOTE_AS4 },
-    { 450, NOTE_AS4 },
+    { 400, NOTE_F4 },
+    { 800, NOTE_AS4 },
+    { 400, NOTE_A4 },
+    { 400, NOTE_AS4 },
+    { 800, NOTE_G4 },
+    { 400, NOTE_F4 },
+    { 400, NOTE_AS4 },
+    { 400, NOTE_C5 },
+    { 180, NOTE_D5 },
+    { 160, NOTE_DS5 },
+    { 750, NOTE_C5 },
+    { 160, NOTE_AS4 },
+    { 1300, NOTE_AS4 },
     Note::END
 };
 
