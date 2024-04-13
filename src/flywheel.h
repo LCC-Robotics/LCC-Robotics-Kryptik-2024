@@ -12,12 +12,13 @@ namespace Flywheel {
 enum FlywheelState : int8_t {
     FW_OFF = 0,
     FW_CLOSE = 60,
-    FW_FAR = 120
+    FW_FAR = 118
 };
 
 constexpr int8_t FEED_VAL = 127;
 
 Servo flywheel_feed;
+Servo flywheel_wall;
 
 etl::debounce<20> close_button_debounce;
 etl::debounce<20> far_button_debounce;
@@ -28,6 +29,7 @@ void CustomSetup()
     CrcLib::InitializePwmOutput(FW_MOTOR_BOT, false);
 
     flywheel_feed.attach(FW_FEEDING_MOTOR);
+    flywheel_wall.attach(FW_WALL_MOTOR);
 }
 
 void die()
@@ -54,5 +56,6 @@ void CustomUpdate()
     CrcLib::SetPwmOutput(FW_MOTOR_BOT, flywheel_state);
 
     flywheel_feed.write((flywheel_state != FW_OFF) ? FEED_VAL : 0);
+    flywheel_wall.write((flywheel_state != FW_OFF) ? FEED_VAL : 0);
 }
 }
