@@ -8,14 +8,16 @@
 
 namespace Flywheel {
 // TODO: Find optimal values for flywheel
-// TODO: Implement feeding system
+
 enum FlywheelState : int8_t {
     FW_OFF = 0,
-    FW_CLOSE = 60,
+    FW_CLOSE = 50,
     FW_FAR = 118
 };
 
-constexpr int8_t FEED_VAL = 127;
+constexpr int FEED_VAL = 127;
+constexpr int WALL_VAL = 127;
+constexpr int SERVO_OFF = 90;
 
 Servo flywheel_feed;
 Servo flywheel_wall;
@@ -38,6 +40,9 @@ void die()
 
     CrcLib::SetPwmOutput(FW_MOTOR_TOP, 0);
     CrcLib::SetPwmOutput(FW_MOTOR_BOT, 0);
+
+    flywheel_feed.write(SERVO_OFF);
+    flywheel_wall.write(SERVO_OFF);
 }
 
 void CustomUpdate()
@@ -55,7 +60,10 @@ void CustomUpdate()
     CrcLib::SetPwmOutput(FW_MOTOR_TOP, flywheel_state);
     CrcLib::SetPwmOutput(FW_MOTOR_BOT, flywheel_state);
 
-    flywheel_feed.write((flywheel_state != FW_OFF) ? FEED_VAL : 0);
-    flywheel_wall.write((flywheel_state != FW_OFF) ? FEED_VAL : 0);
+    // flywheel_feed.write(FEED_VAL);
+    // flywheel_wall.write(WALL_VAL);
+
+    flywheel_feed.write((flywheel_state != FW_OFF) ? FEED_VAL : SERVO_OFF);
+    flywheel_wall.write((flywheel_state != FW_OFF) ? WALL_VAL : SERVO_OFF);
 }
 }
